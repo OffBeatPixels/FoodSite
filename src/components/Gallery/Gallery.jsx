@@ -1,8 +1,10 @@
 import React from "react";
-import Food1 from "../../assets/food/img2.jpeg";
-import Food2 from "../../assets/food/img1.webp";
-import Food3 from "../../assets/food/img3.jpeg";
-import Food4 from "../../assets/food/img4.jpeg";
+import Food1 from "../../assets/food/G1.jpg";
+import Food2 from "../../assets/food/G2.jpg";
+import Food3 from "../../assets/food/G3.jpg";
+import Food4 from "../../assets/food/G4.jpg";
+import Food5 from "../../assets/food/G5.jpg";
+import Food6 from "../../assets/food/G6.jpg";
 import { motion } from "framer-motion";
 import { SlideUp } from "../Hero/Hero";
 const GalleryData = [
@@ -37,14 +39,14 @@ const GalleryData = [
   {
     id: 5,
     name: "person",
-    img: Food4,
+    img: Food5,
     price: "$8",
     delay: 1.2,
   },
   {
     id: 6,
     name: "person",
-    img: Food4,
+    img: Food6,
     price: "$8",
     delay: 1.2,
   },
@@ -101,7 +103,7 @@ const Gallery = () => {
                 {/* <button className="btn-primary group-hover:mb-3 opacity-0 group-hover:opacity-100">
                   Buy Now
                 </button> */}
-                <p className="text-xl font-semibold">{item.name}</p>
+                {/* <p className="text-xl font-semibold">{item.name}</p> */}
                 <p className="text-xl font-bold text-yellow-500">
                   {/* {item.price} */}
                 </p>

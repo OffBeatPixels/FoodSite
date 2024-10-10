@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../assets/food/logo.jpg";
+import Logo from "../../assets/food/logo.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Brands from "./../Brands/Brands";

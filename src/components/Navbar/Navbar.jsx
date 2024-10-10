@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import logo from "../../assets/food/logo.jpg";
+import logo from "../../assets/food/logo.png";
 import { motion } from "framer-motion";
 import { TiThMenu } from "react-icons/ti";
-import { NavLink } from "react-router-dom"; 
+import { NavLink } from "react-router-dom";
 const navmenu = [
   { id: 1, title: "Home", path: "/", delay: "0.1s" },
   { id: 2, title: "About", path: "/about", delay: "0.2s" },
@@ -37,7 +37,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full h-14 bg-white shadow-md">
+    <nav className="w-full h-16 bg-white shadow-md">
       <div className="mx-auto flex justify-between items-center font-league">
         {/* LOGO */}
         <motion.img
@@ -46,7 +46,7 @@ const Navbar = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           src={logo}
           alt="logo"
-          className="w-14 rounded-full"
+          className="w-16 rounded-full"
         />
 
         {/* Menu (always visible on larger screens) */}
