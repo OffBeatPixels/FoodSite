@@ -1,12 +1,12 @@
 import React from "react";
-import FoodPng from "../../assets/food/food.png";
-import Spoon from "../../assets/food/spoon.png";
-import Leaf from "../../assets/food/leaf.png";
-import Banana from "../../assets/food/banana.png";
+// import FoodPng from "../../assets/food/food.png";
+// import Spoon from "../../assets/food/spoon.png";
+// import Leaf from "../../assets/food/leaf.png";
+// import Banana from "../../assets/food/banana.png";
 // import { IoCartOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Banner from "../../assets/food/service_1.png";
+// import Banner from "../../assets/food/service_1.png";
 
 export const SlideUp = (delay) => {
   return {
@@ -34,7 +34,7 @@ const Hero = () => {
         // style={{ backgroundImage: `url(${Banner})` }}
       >
         <video
-          src="./dist/assets/food/magnet-food.webm"
+          src="./src/assets/food/magnet-food.webm"
           alt="banner-video"
           autoPlay
           muted
@@ -44,9 +44,7 @@ const Hero = () => {
           place-content-center justify-between z-10"
         >
           {/* text Content here */}
-          <div
-            
-          >
+          <div>
             {/* <motion.h1
               initial="hidden"
               whileInView="show"
@@ -87,8 +85,8 @@ const Hero = () => {
               variants={SlideUp(2)}
               className="btn-primary inline-block  "
             > */}
-              {/* <IoCartOutline className=" inline mr-2 " /> */}
-              {/* <Link to="/about">About US</Link>
+            {/* <IoCartOutline className=" inline mr-2 " /> */}
+            {/* <Link to="/about">About US</Link>
             </motion.button> */}
           </div>
 
