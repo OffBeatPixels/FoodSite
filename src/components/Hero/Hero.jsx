@@ -34,7 +34,7 @@ const Hero = () => {
         // style={{ backgroundImage: `url(${Banner})` }}
       >
         <video
-          src="./src/assets/food/magnet-food.webm"
+          src="magnet-food.webm"
           alt="banner-video"
           autoPlay
           muted
