@@ -28,7 +28,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           {/* Fallback Route */}
-          <Route path="*" element={<div>404 - Page Not Found</div>} />
+          <Route path="*" element={<App />} />
         </Routes>
       </main>
     </Layout>
