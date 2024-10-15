@@ -11,6 +11,8 @@ export default {
         white2: "#fffbf2",
         darkGreen: "#05ab54",
         dark: "#1e1e1e",
+        charcoal: "#36454F",
+        tan: "#B68D40",
       },
 
       fontFamily: {

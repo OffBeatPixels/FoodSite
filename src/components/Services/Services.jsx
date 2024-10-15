@@ -1,11 +1,13 @@
 import React from "react";
-import Service1 from "../../assets/food/service_1.png";
-import Service2 from "../../assets/food/service_2.png";
-import Service3 from "../../assets/food/service_3.png";
-import Service4 from "../../assets/food/service_4.png";
+import Service1 from "../../assets/food/MGF-1.jpg";
+import Service2 from "../../assets/food/MGF-2.jpg";
+import Service3 from "../../assets/food/MGF-3.jpg";
+import Service4 from "../../assets/food/MGF-4.webp";
 import { delay, motion } from "framer-motion";
 import { SlideUp } from "../Hero/Hero";
 import { Link } from "react-router-dom";
+import Divider from "../Divider/Divider";
+import shape from "../../assets/food/shape.svg";
 
 const ServicesData = [
   {
@@ -14,23 +16,23 @@ const ServicesData = [
     img: Service1,
     // price: "$10",
     description:
-      "At Ace Caterers, we specialize in providing high-quality catering services tailored to the needs of industrial and institutional clients... ",
+      "At Ace Caterers,We specialize in providing high-quality catering... ",
     delay: 0.4,
   },
   {
     id: 2,
-    name: "Outdoor Catering in ",
+    name: "Outdoor Catering",
     img: Service2,
     description:
-      "Life is full of big and small happenings which prompt us to celebrate with friends and relatives to share our joy and happiness...  ",
+      "Life is full of big and small happenings which prompt us to celebrate...  ",
     delay: 0.8,
   },
   {
     id: 3,
-    name: "Club Operations (Golf Clubs, Private Clubs)",
+    name: "Club Operations",
     img: Service3,
     description:
-      "For over six years, Magnet Foods has managed exclusive clubs, including those for guests offering top-notch service... ",
+      "For over six years, Magnet Foods has managed exclusive clubs... ",
 
     delay: 1,
   },
@@ -39,7 +41,7 @@ const ServicesData = [
     name: "Operations & Maintenance",
     img: Service4,
     description:
-      "If your property, whether it’s a club, restaurant, or event venue, isn’t delivering the returns you expected, Magnet foods can help... ",
+      "If your property, whether it’s a club, restaurant, or event venue... ",
 
     delay: 1.2,
   },
@@ -47,42 +49,50 @@ const ServicesData = [
 
 const Services = () => {
   return (
-    <section>
-      <div className="container pb-14 ">
+    <section
+      className=" text-black mt-5 "
+      style={{
+        background: `url("https://img.freepik.com/free-psd/indian-food-illustration-isolated_23-2151851514.jpg?t=st=1728988377~exp=1728991977~hmac=d5c109f1e8567b92f6368302ba35a7b3fb0ecb276e84ac9828cba7b35e8e4bc0&w=996") center/cover no-repeat`,
+      }}
+    >
+      {/* Added class for background */}
+      <div className="container pb-14  ">
         {/* Heading Section */}
         <motion.h3
           variants={SlideUp(0)}
           initial="hidden"
           whileInView="show"
-          className="text-2xl font-semibold text-darkGreen uppercase py-8 text-center"
+          className="text-3xl  font-bold text-black uppercase  py-8 text-center"
         >
-          Services
+          our Services
         </motion.h3>
 
         {/* Grid Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 text-center">
           {ServicesData.map((item) => {
             return (
               <motion.div
                 variants={SlideUp(item.delay)}
                 initial="hidden"
                 whileInView="show"
-                className=" group gap-5 rounded-2xl"
+                viewport={{ once: true, amount: 0.3 }}
+                className=" group gap-5 rounded-2xl bg-white "
               >
                 <img
                   src={item.img}
                   alt="Image"
-                  className="w-52 xl:w-56 rounded-xl img-shadow  group-hover:scale-90 overflow-hidden transition-all duration-500 mb-5 mt-5"
+                  className="w-52 xl:w-56 aspect-square  group-hover:scale-90 overflow-hidden transition-all duration-500 mb-5 mt-5"
                 />
+
                 <div>
-                  <h3 className="text-[13px] xl:text-[15px] font-semibold">
+                  <h3 className="text-[13px] xl:text-[15px] font-semibold  ">
                     {item.name}
                   </h3>
                   {/* <h3 className="text-xl text-yellow-500">{item.price}</h3>*/}
-                  <p className="text-sm">{item.description}</p>
+                  <p className="text-sm m-5 ">{item.description}</p>
                   <Link
                     to={`/servicePage#service${item.id}`}
-                    className="bg-green-600 rounded-lg p-1"
+                    className="font-bold text-lg  text-orange-500 "
                   >
                     Read More
                   </Link>

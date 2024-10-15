@@ -28,24 +28,22 @@ export const SlideUp = (delay) => {
 
 const Hero = () => {
   return (
-    <main>
-      <div
-        className="container w-full  min-h-[200px]    "
-        // style={{ backgroundImage: `url(${Banner})` }}
-      >
-        <video
-          src="magnet-food.webm"
-          alt="banner-video"
-          autoPlay
-          muted
-        />
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 
-          place-content-center justify-between z-10"
-        >
-          {/* text Content here */}
+    <section className="mt-2 m-auto  w-[90vw] h-[80vh] overflow-hidden">
+      <video
+        src="magnet-food.webm"
+        alt="banner-video"
+        autoPlay
+        loop
+        className="object-cover rounded-2xl w-full h-full"
+      />
+      {/* <div
+        className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 
+          place-content-center justify-between z-10 relative"
+      > */}
+        {/* text Content here */}
+        {/*
           <div>
-            {/* <motion.h1
+             <motion.h1
               initial="hidden"
               whileInView="show"
               variants={SlideUp(0.5)}
@@ -58,7 +56,7 @@ const Hero = () => {
                 className="absolute w-[50px] top-[-40px] right-0  md:right-[100px]"
               />
             </motion.h1> */}
-            {/* <motion.h1
+        {/* <motion.h1
               initial="hidden"
               whileInView="show"
               variants={SlideUp(1)}
@@ -66,7 +64,7 @@ const Hero = () => {
             >
               FoodSite
             </motion.h1> */}
-            {/* <motion.p
+        {/* <motion.p
               initial="hidden"
               whileInView="show"
               variants={SlideUp(1.5)}
@@ -79,19 +77,20 @@ const Hero = () => {
               is to make each one grand and special.
             </motion.p> */}
 
-            {/* <motion.button
+        {/* <motion.button
               initial="hidden"
               whileInView="show"
               variants={SlideUp(2)}
               className="btn-primary inline-block  "
             > */}
-            {/* <IoCartOutline className=" inline mr-2 " /> */}
-            {/* <Link to="/about">About US</Link>
-            </motion.button> */}
+        {/* <IoCartOutline className=" inline mr-2 " /> */}
+        {/* <Link to="/about">About US</Link>
+            </motion.button> 
           </div>
+          */}
 
-          {/* image section */}
-          {/* <div className="relative flex justify-center items-center">
+        {/* image section */}
+        {/* <div className="relative flex justify-center items-center">
             <motion.img
               initial={{ opacity: 0, rotate: 20, x: 200, y: 100 }}
               whileInView={{ opacity: 1, rotate: 0, x: 0, y: 0 }}
@@ -117,15 +116,14 @@ const Hero = () => {
               className="w-[400px] absolute top-[-30px] right-[-130px] md:right-[-160px] img-shadow"
             />
           </div> */}
-        </div>
+      {/* </div> */}
 
-        {/* Background Yellow */}
-        <motion.div
+      {/* Background Yellow */}
+      {/* <motion.div
           initial={{ opacity: 0, rotate: 60, x: 200, y: 100 }}
           whileInView={{ opacity: 1, rotate: 40, x: 0, y: 0 }}
-        ></motion.div>
-      </div>
-    </main>
+        ></motion.div> */}
+    </section>
   );
 };
 

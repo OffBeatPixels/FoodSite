@@ -5,7 +5,8 @@ import Services from "./components/Services/Services";
 import Brands from "./components/Brands/Brands";
 import InquiryForm from "./components/Pages/InquiryForm/InquiryForm";
 // import BannerSlider from "./components/Banner/BannerSlider";
-
+import Explore from "./components/Explore/Explore";
+import Card from "./components/Explore/Card";
 const App = () => {
   return (
     <div>
@@ -17,6 +18,8 @@ const App = () => {
         <Services />
         {/* <Banner /> */}
         <Brands />
+        {/* <Explore /> */}
+        <Card />
         <InquiryForm />
         <Gallery />
         {/* <Testimonial /> */}

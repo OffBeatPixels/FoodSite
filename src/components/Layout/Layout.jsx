@@ -23,14 +23,14 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="min-h-screen   bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <button
         onClick={toggleDarkMode}
         className="fixed md:top-4  right-1 p-2 z-50 bg-gray-200 dark:bg-gray-800 rounded-full text-gray-600 dark:text-gray-300"
       >
         {isDarkMode ? <CgDarkMode size={24} /> : <CgDarkMode size={24} />}
       </button>
-      <Navbar />
+      <Navbar isDarkMode={isDarkMode} />
       <main>{children}</main> {/* This will render page-specific content */}
       <Footer />
     </div>

@@ -3,12 +3,14 @@ import logo from "../../assets/food/logo.png";
 import { motion } from "framer-motion";
 import { TiThMenu } from "react-icons/ti";
 import { NavLink } from "react-router-dom";
+import ExplorePage from './../Explore/ExplorePage';
 const navmenu = [
   { id: 1, title: "Home", path: "/", delay: "0.1s" },
   { id: 2, title: "About", path: "/about", delay: "0.2s" },
   { id: 3, title: "Blog", path: "/blog", delay: "0.3s" },
   { id: 4, title: "Gallery", path: "/gallery", delay: "0.4s" },
   { id: 5, title: "Services", path: "/servicePage", delay: "0.5s" },
+  { id: 6, title: "Explore", path: "/ExplorePage", delay: "0.6s" },
 ];
 
 const SlideDown = (delay) => {
@@ -29,7 +31,7 @@ const SlideDown = (delay) => {
   };
 };
 
-const Navbar = () => {
+const Navbar = ({ isDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuToggle = () => {
@@ -37,7 +39,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full h-16 bg-white shadow-md">
+    <nav
+      className={`w-full m-0 h-16 ${
+        isDarkMode ? "bg-gray-800 text-white" : "bg-white"
+      } shadow-md`}
+    >
       <div className="mx-auto flex justify-between items-center font-league">
         {/* LOGO */}
         <motion.img
@@ -66,7 +72,7 @@ const Navbar = () => {
                     ({ isActive }) =>
                       isActive
                         ? "inline-block px-4 text-xl text-orange-700" // Active link style
-                        : "inline-block px-4 text-xl text-gray-800 hover:text-black" // Default link style
+                        : "inline-block px-4 text-xl  hover:text-black" // Default link style
                   }
                 >
                   {menu.title}

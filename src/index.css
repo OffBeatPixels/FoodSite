@@ -36,7 +36,7 @@
 .slider {
   @apply h-[50vh] sm:h-screen  w-screen overflow-hidden relative;
 }
-.slider .list  {
+.slider .list {
   @apply w-full h-full absolute inset-[0_0_0_0];
 }
 .slider .list .item img {
@@ -180,4 +180,41 @@
   .slider .list .item .content .title {
     @apply text-[50px];
   }
+}
+
+
+
+.wave-divider {
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  position: absolute;
+  /* bottom: 0; */
+ 
+}
+
+.wave-divider svg {
+  padding-top: 2px;
+  width: calc(140% + 1.3px);
+  height: 280px;
+  /* margin-top: 100px; */
+}
+
+.wave-divider .shape-fill {
+  fill: #9b9393;
+ 
+}
+
+.service-background {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Additional styles to ensure content is above the background */
+.service-background .container {
+  position: relative; /* Ensure container content stays above the background */
+  z-index: 1; /* Bring it above the pseudo-element */
 }

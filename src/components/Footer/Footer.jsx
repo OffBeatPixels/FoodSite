@@ -3,6 +3,7 @@ import Logo from "../../assets/food/logo.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Brands from "./../Brands/Brands";
+import Divider from "../Divider/Divider";
 import {
   FaFacebook,
   FaTwitter,
@@ -16,10 +17,13 @@ const Footer = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-gray-400 rounded-t-3xl  "
+      className="relative z-10"
     >
-      <div className="container py-1">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="container pt-16">
+        {/* Background Shape */}
+        
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
           {/* Brand Info */}
           <div>
             <img src={Logo} alt="Logo" className="w-24 mb-4 rounded-full" />
@@ -30,7 +34,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 z-99">
             <div>
               <h3 className="font-semibold text-xl  mb-4">Quick Links</h3>
               <ul className="space-y-2">
@@ -74,7 +78,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="mt-4">
+          <div className="mt-4 z-99">
             <h2 className="text-xl font-semibold mb-2">Follow Us</h2>
             <div className="flex gap-4">
               <a
@@ -127,6 +131,7 @@ const Footer = () => {
           </div> */}
         </div>
       </div>
+      <Divider />
     </motion.footer>
   );
 };

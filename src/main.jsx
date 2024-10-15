@@ -12,6 +12,8 @@ import Blog from "./components/Pages/Blog/Blog.jsx";
 import Services from "./components/Services/Services.jsx";
 import Brands from "./components/Brands/Brands.jsx";
 import ServicePage from "./components/Services/ServicePage.jsx";
+// import Explore from "./components/Explore/ExplorePage.jsx";
+import ExplorePage from "./components/Explore/ExplorePage.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
@@ -27,6 +29,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/ExplorePage" element={<ExplorePage />} />
           {/* Fallback Route */}
           <Route path="*" element={<App />} />
         </Routes>

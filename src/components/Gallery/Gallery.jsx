@@ -1,109 +1,142 @@
 import React from "react";
-import Food1 from "../../assets/food/G1.jpg";
-import Food2 from "../../assets/food/G2.jpg";
-import Food3 from "../../assets/food/G3.jpg";
-import Food4 from "../../assets/food/G4.jpg";
-import Food5 from "../../assets/food/G5.jpg";
-import Food6 from "../../assets/food/G6.jpg";
+import G1 from "../../assets/food/G1.jpg";
+import G2 from "../../assets/food/G2.jpg";
+import G3 from "../../assets/food/G3.jpg";
+import G4 from "../../assets/food/G4.jpg";
+import G5 from "../../assets/food/G5.jpg";
+import G6 from "../../assets/food/G6.jpg";
+import G7 from "../../assets/food/G7.jpg";
+import G8 from "../../assets/food/G8.jpg";
+import G9 from "../../assets/food/G9.jpg";
+import G10 from "../../assets/food/G10.jpg";
+import G11 from "../../assets/food/G11.jpg";
 import { motion } from "framer-motion";
 import { SlideUp } from "../Hero/Hero";
+import GalleryShape from "./GalleryShape";
 const GalleryData = [
   {
     id: 1,
     name: "person ",
-    img: Food1,
+    img: G1,
     price: "$10",
     delay: 0.4,
   },
   {
     id: 2,
     name: "Person",
-    img: Food2,
+    img: G2,
     price: "$5",
     delay: 0.8,
   },
   {
     id: 3,
     name: "person",
-    img: Food3,
+    img: G3,
     price: "$8",
     delay: 1.2,
   },
   {
     id: 4,
     name: "person",
-    img: Food4,
+    img: G4,
     price: "$8",
     delay: 1.2,
   },
   {
     id: 5,
     name: "person",
-    img: Food5,
+    img: G5,
     price: "$8",
     delay: 1.2,
   },
   {
     id: 6,
     name: "person",
-    img: Food6,
+    img: G6,
     price: "$8",
     delay: 1.2,
   },
-  {
-    id: 6,
-    name: "person",
-    img: Food4,
-    price: "$8",
-    delay: 1.2,
-  },
-  {
-    id: 6,
-    name: "person",
-    img: Food4,
-    price: "$8",
-    delay: 1.2,
-  },
+  // {
+  //   id: 7,
+  //   name: "person",
+  //   img: G7,
+  //   price: "$8",
+  //   delay: 1.2,
+  // },
+  // {
+  //   id: 8,
+  //   name: "person",
+  //   img: G8,
+  //   price: "$8",
+  //   delay: 1.2,
+  // },
+  // {
+  //   id: 9,
+  //   name: "person",
+  //   img: G9,
+  //   price: "$8",
+  //   delay: 1.2,
+  // },
+  // {
+  //   id: 10,
+  //   name: "person",
+  //   img: G10,
+  //   price: "$8",
+  //   delay: 1.2,
+  // },
+  // {
+  //   id: 11,
+  //   name: "person",
+  //   img: G11,
+  //   price: "$8",
+  //   delay: 1.2,
+  // },
 ];
 
 const Gallery = () => {
   return (
-    <section>
-      <div className="container py-24">
+    <section className="relative">
+      {/* Colored Shape Overlay */}
+      <div className="absolute inset-0 flex justify-center items-center">
+        <div className="w-full h-full relative">
+          {/* First Shape (left) */}
+          <div className="absolute top-0 left-0 w-full h-full bg-[#111e23] clip-left"></div>
+          {/* Second Shape (right) */}
+          <div className="absolute top-0 left-0 w-full h-full bg-emerald-900 clip-right"></div>
+        </div>
+      </div>
+
+      <div className="container py-1 relative z-10">
         {/* Section Title */}
         <motion.h3
           variants={SlideUp(0.5)}
           initial="hidden"
           whileInView="show"
-          className="text-4xl text-center font-league font-semibold uppercase py-8"
+          className="text-4xl text-center text-white font-league font-semibold uppercase py-8"
         >
           Gallery
         </motion.h3>
 
         {/* Cards Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 place-items-center">
           {GalleryData.map((item) => (
             <div
               key={item.id}
-              className="group space-y-3 text-center bg-white/50 shadow-xl p-3 rounded-xl"
+              className="group space-y-3 text-center rounded-xl"
             >
-              <div className="flex justify-center items-center">
+              <div className="flex justify-center  items-center">
                 <img
                   src={item.img}
                   alt="Gallery"
                   className="
-            w-44 rounded-2xl img-shadow
-            group-hover:scale-x-110
-            group-hover:translate-y-[-10px]
-            transition-all
-            duration-700"
+                w-72 rounded-2xl img-shadow
+                group-hover:scale-x-110
+                group-hover:translate-y-[-10px]
+                transition-all
+                duration-700"
                 />
               </div>
               <div>
-                {/* <button className="btn-primary group-hover:mb-3 opacity-0 group-hover:opacity-100">
-                  Buy Now
-                </button> */}
-                {/* <p className="text-xl font-semibold">{item.name}</p> */}
                 <p className="text-xl font-bold text-yellow-500">
                   {/* {item.price} */}
                 </p>
@@ -112,6 +145,16 @@ const Gallery = () => {
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        .clip-left {
+          clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+        }
+
+        .clip-right {
+          clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        }
+      `}</style>
     </section>
   );
 };
