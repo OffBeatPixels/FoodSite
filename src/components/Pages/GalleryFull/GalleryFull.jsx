@@ -1,18 +1,17 @@
 import React from "react";
-import G1 from "../../assets/food/G1.jpg";
-import G2 from "../../assets/food/G2.jpg";
-import G3 from "../../assets/food/G3.jpg";
-import G4 from "../../assets/food/G4.jpg";
-import G5 from "../../assets/food/G5.jpg";
-import G6 from "../../assets/food/G6.jpg";
-import G7 from "../../assets/food/G7.jpg";
-import G8 from "../../assets/food/G8.jpg";
-import G9 from "../../assets/food/G9.jpg";
-import G10 from "../../assets/food/G10.jpg";
-import G11 from "../../assets/food/G11.jpg";
+import G1 from "../../../assets/food/G1.jpg";
+import G2 from "../../../assets/food/G2.jpg";
+import G3 from "../../../assets/food/G3.jpg";
+import G4 from "../../../assets/food/G4.jpg";
+import G5 from "../../../assets/food/G5.jpg";
+import G6 from "../../../assets/food/G6.jpg";
+import G7 from "../../../assets/food/G7.jpg";
+import G8 from "../../../assets/food/G8.jpg";
+import G9 from "../../../assets/food/G9.jpg";
+import G10 from "../../../assets/food/G10.jpg";
+import G11 from "../../../assets/food/G11.jpg";
 import { motion } from "framer-motion";
-import { SlideUp } from "../Hero/Hero";
-import { Link } from "react-router-dom";
+import { SlideUp } from "../../Hero/Hero";
 const GalleryData = [
   {
     id: 1,
@@ -56,44 +55,44 @@ const GalleryData = [
     price: "$8",
     delay: 1.2,
   },
-  // {
-  //   id: 7,
-  //   name: "person",
-  //   img: G7,
-  //   price: "$8",
-  //   delay: 1.2,
-  // },
-  // {
-  //   id: 8,
-  //   name: "person",
-  //   img: G8,
-  //   price: "$8",
-  //   delay: 1.2,
-  // },
-  // {
-  //   id: 9,
-  //   name: "person",
-  //   img: G9,
-  //   price: "$8",
-  //   delay: 1.2,
-  // },
-  // {
-  //   id: 10,
-  //   name: "person",
-  //   img: G10,
-  //   price: "$8",
-  //   delay: 1.2,
-  // },
-  // {
-  //   id: 11,
-  //   name: "person",
-  //   img: G11,
-  //   price: "$8",
-  //   delay: 1.2,
-  // },
+  {
+    id: 7,
+    name: "person",
+    img: G7,
+    price: "$8",
+    delay: 1.2,
+  },
+  {
+    id: 8,
+    name: "person",
+    img: G8,
+    price: "$8",
+    delay: 1.2,
+  },
+  {
+    id: 9,
+    name: "person",
+    img: G9,
+    price: "$8",
+    delay: 1.2,
+  },
+  {
+    id: 10,
+    name: "person",
+    img: G10,
+    price: "$8",
+    delay: 1.2,
+  },
+  {
+    id: 11,
+    name: "person",
+    img: G11,
+    price: "$8",
+    delay: 1.2,
+  },
 ];
 
-const Gallery = () => {
+const GalleryFull = () => {
   return (
     <section className="relative">
       {/* Colored Shape Overlay */}
@@ -112,14 +111,9 @@ const Gallery = () => {
           variants={SlideUp(0.5)}
           initial="hidden"
           whileInView="show"
-          className="text-4xl text-center text-white font-league font-semibold uppercase py-8 "
+          className="text-4xl text-center text-white font-league font-semibold uppercase py-8"
         >
-          <Link
-            to="/galleryFull"
-            className="border-4 border-x-2 border-white"
-          >
-            Gallery
-          </Link>
+          Gallery
         </motion.h3>
 
         {/* Cards Section */}
@@ -134,7 +128,7 @@ const Gallery = () => {
                   src={item.img}
                   alt="Gallery"
                   className="
-                w-72 rounded-2xl img-shadow
+                w-72 rounded-2xl 
                 group-hover:scale-x-110
                 group-hover:translate-y-[-10px]
                 transition-all
@@ -164,4 +158,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default GalleryFull;

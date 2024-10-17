@@ -50,9 +50,11 @@ const ServicesData = [
 const Services = () => {
   return (
     <section
-      className=" text-black mt-5 "
+      className=" text-black  "
       style={{
-        background: `url("https://img.freepik.com/free-psd/indian-food-illustration-isolated_23-2151851514.jpg?t=st=1728988377~exp=1728991977~hmac=d5c109f1e8567b92f6368302ba35a7b3fb0ecb276e84ac9828cba7b35e8e4bc0&w=996") center/cover no-repeat`,
+        // background: `url("https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?cs=srgb&dl=pexels-goumbik-616401.jpg&fm=jpg") center/cover  no-repeat`,
+        background: `url("https://img.freepik.com/free-psd/indian-food-illustration-isolated_23-2151851514.jpg?t=st=1728988377~exp=1728991977~hmac=d5c109f1e8567b92f6368302ba35a7b3fb0ecb276e84ac9828cba7b35e8e4bc0&w=996") center/cover no-repeat  `,
+        backgroundSize: "100% 100%",
       }}
     >
       {/* Added class for background */}
@@ -76,7 +78,7 @@ const Services = () => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.3 }}
-                className=" group gap-5 rounded-2xl bg-white "
+                
               >
                 <img
                   src={item.img}
@@ -84,7 +86,7 @@ const Services = () => {
                   className="w-52 xl:w-56 aspect-square  group-hover:scale-90 overflow-hidden transition-all duration-500 mb-5 mt-5"
                 />
 
-                <div>
+                <div >
                   <h3 className="text-[13px] xl:text-[15px] font-semibold  ">
                     {item.name}
                   </h3>

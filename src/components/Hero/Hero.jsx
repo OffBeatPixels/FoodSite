@@ -27,14 +27,15 @@ export const SlideUp = (delay) => {
 };
 
 const Hero = () => {
+
   return (
-    <section className="mt-2 m-auto  w-[90vw] h-[80vh] overflow-hidden">
+    <section className="mt-2 mx-auto  w-[90vw] h-[80vh] overflow-hidden  ">
       <video
         src="magnet-food.webm"
         alt="banner-video"
         autoPlay
-        loop
-        className="object-cover rounded-2xl w-full h-full"
+       
+        className="object-cover rounded-2xl w-full h-full "
       />
       {/* <div
         className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 

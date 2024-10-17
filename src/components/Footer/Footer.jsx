@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../assets/food/logo.png";
+import Logo from "../../assets/food/logo.jpg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Brands from "./../Brands/Brands";
@@ -17,12 +17,11 @@ const Footer = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative z-10"
+      className="relative z-10 bg-emerald-900 dark:bg-gray-900 text-gray-900 dark:text-gray-100"
     >
       <div className="container pt-16">
         {/* Background Shape */}
-        
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
           {/* Brand Info */}
           <div>

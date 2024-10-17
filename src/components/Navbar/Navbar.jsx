@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../assets/food/logo.png";
+import logo from "../../assets/food/logo.jpg";
 import { motion } from "framer-motion";
 import { TiThMenu } from "react-icons/ti";
 import { NavLink } from "react-router-dom";
@@ -8,7 +8,7 @@ const navmenu = [
   { id: 1, title: "Home", path: "/", delay: "0.1s" },
   { id: 2, title: "About", path: "/about", delay: "0.2s" },
   { id: 3, title: "Blog", path: "/blog", delay: "0.3s" },
-  { id: 4, title: "Gallery", path: "/gallery", delay: "0.4s" },
+  { id: 4, title: "Gallery", path: "/galleryFull", delay: "0.4s" },
   { id: 5, title: "Services", path: "/servicePage", delay: "0.5s" },
   { id: 6, title: "Explore", path: "/ExplorePage", delay: "0.6s" },
 ];
@@ -39,12 +39,8 @@ const Navbar = ({ isDarkMode }) => {
   };
 
   return (
-    <nav
-      className={`w-full m-0 h-16 ${
-        isDarkMode ? "bg-gray-800 text-white" : "bg-white"
-      } shadow-md`}
-    >
-      <div className="mx-auto flex justify-between items-center font-league">
+    <nav className="w-full m-0 h-20 shadow-md justify-center items-center">
+      <div className="flex items-center font-league">
         {/* LOGO */}
         <motion.img
           initial={{ opacity: 0 }}
@@ -52,7 +48,7 @@ const Navbar = ({ isDarkMode }) => {
           transition={{ duration: 0.8, delay: 0.5 }}
           src={logo}
           alt="logo"
-          className="w-16 rounded-full"
+          className="w-20 rounded-full ml-20"
         />
 
         {/* Menu (always visible on larger screens) */}
