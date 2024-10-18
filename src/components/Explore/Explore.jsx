@@ -1,14 +1,14 @@
 import React from "react";
-import Service1 from "../../assets/food/service_1.png";
-import Service2 from "../../assets/food/service_2.png";
-import Service3 from "../../assets/food/service_3.png";
-import Service4 from "../../assets/food/service_4.png";
+// import Service1 from "/src/assets/food/service_1.png";
+import Service2 from "/src/assets/food/service_2.png";
+// import Service3 from "/src/assets/food/service_3.png";
+// import Service4 from "/src/assets/food/service_4.png";
 import { delay, motion } from "framer-motion";
-import { SlideUp } from "../Hero/Hero";
+import { SlideUp } from "/src/components/Hero/Hero";
 import { Link } from "react-router-dom";
-import Divider from "../Divider/Divider";
-import shape from "../../assets/food/shape.svg";
-import ExplorePage from './ExplorePage';
+// import Divider from "/src/components/Divider/Divider";
+// import shape from "/src/assets/food/shape.svg";
+// import ExplorePage from "./ExplorePage";
 
 const ExploreData = [
   {

@@ -1,10 +1,10 @@
 import React from "react";
-import Service1 from "../../assets/food/service_1.png";
-import Service2 from "../../assets/food/service_2.png";
-import Service3 from "../../assets/food/service_3.png";
-import Service4 from "../../assets/food/service_4.png";
+import Service1 from "/src/assets/food/service_1.png";
+import Service2 from "/src/assets/food/service_2.png";
+import Service3 from "/src/assets/food/service_3.png";
+import Service4 from "/src/assets/food/service_4.png";
 import { motion } from "framer-motion";
-import { SlideUp } from "../Hero/Hero";
+import { SlideUp } from "/src/components/Hero/Hero";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 

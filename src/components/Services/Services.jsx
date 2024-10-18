@@ -1,13 +1,13 @@
 import React from "react";
-import Service1 from "../../assets/food/MGF-1.jpg";
-import Service2 from "../../assets/food/MGF-2.jpg";
-import Service3 from "../../assets/food/MGF-3.jpg";
-import Service4 from "../../assets/food/MGF-4.webp";
+import Service1 from "/src/assets/food/MGF-1.jpg";
+import Service2 from "/src/assets/food/MGF-2.jpg";
+import Service3 from "/src/assets/food/MGF-3.jpg";
+import Service4 from "/src/assets/food/MGF-4.webp";
 import { delay, motion } from "framer-motion";
-import { SlideUp } from "../Hero/Hero";
+import { SlideUp } from "/src/components/Hero/Hero";
 import { Link } from "react-router-dom";
-import Divider from "../Divider/Divider";
-import shape from "../../assets/food/shape.svg";
+import Divider from "/src/components/Divider/Divider";
+import shape from "/src/assets/food/shape.svg";
 
 const ServicesData = [
   {
@@ -78,7 +78,6 @@ const Services = () => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.3 }}
-                
               >
                 <img
                   src={item.img}
@@ -86,7 +85,7 @@ const Services = () => {
                   className="w-52 xl:w-56 aspect-square  group-hover:scale-90 overflow-hidden transition-all duration-500 mb-5 mt-5"
                 />
 
-                <div >
+                <div>
                   <h3 className="text-[13px] xl:text-[15px] font-semibold  ">
                     {item.name}
                   </h3>

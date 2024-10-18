@@ -1,5 +1,5 @@
 import { useState } from "react";
-import iq from "../../assets/food/iq.png";
+import iq from "/src/assets/food/iq.png";
 
 function InquiryForm() {
   const [formData, setFormData] = useState({

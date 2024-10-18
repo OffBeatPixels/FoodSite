@@ -1,10 +1,10 @@
 import React from "react";
-import Company1 from "../../assets/food/Brand_1.png";
-import Company2 from "../../assets/food/Brand_2.png";
-import Company3 from "../../assets/food/Brand_3.png";
-import Company4 from "../../assets/food/Brand_4.png";
+import Company1 from "/src/assets/food/Brand_1.png";
+import Company2 from "/src/assets/food/Brand_2.png";
+import Company3 from "/src/assets/food/Brand_3.png";
+import Company4 from "/src/assets/food/Brand_4.png";
 import { motion } from "framer-motion";
-import { SlideUp } from "../Hero/Hero";
+import { SlideUp } from "/src/components/Hero/Hero";
 import styled from "styled-components";
 const BrandsData = [
   {
@@ -44,63 +44,57 @@ const BrandsData = [
 const Brands = () => {
   return (
     <StyledWrapper className="bg-[#3f6e40] mt-0 px-20">
-      
-        {/* Heading Section */}
-        <motion.h3
-          variants={SlideUp(0)}
-          initial="hidden"
-          whileInView="show"
-          className="text-3xl font-bold text-white uppercase py-4 text-center"
-        >
-          Our Brands
-        </motion.h3>
+      {/* Heading Section */}
+      <motion.h3
+        variants={SlideUp(0)}
+        initial="hidden"
+        whileInView="show"
+        className="text-3xl font-bold text-white uppercase py-4 text-center"
+      >
+        Our Brands
+      </motion.h3>
 
-        {/* Grid Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-5 md:gap-0 mx-auto justify-items-center  p-2">
-          {BrandsData.map((item) => {
-            return (
-              <motion.div
-                key={item.id}
-                variants={SlideUp(item.delay)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.3 }}
-                className="group rounded-xl text-center p-2"
-              >
-                <div className="flex justify-between items-stretch max-w-[500px] w-[500px] h-[200px] bg-gray-300  rounded-xl ">
-                  <div className="w-1/2">
-                   
-                    {/* Image container */}
-                    <img
-                      src={item.img}
-                      alt={item.name}
-                      className="h-full rounded-3xl  img-shadow group-hover:scale-105 transition-all duration-500"
-                    />
-                  </div>
-                  <div className="w-1/2 h-full flex flex-col justify-between  text-left">
-                    
-                    {/* Text container */}
-                    <div>
-                      <h3 className="text-xl font-semibold text-red-300">
-                        {item.name}
-                      </h3>
-                      <p className="mt-2 text-sm text-zinc-50">
-                        {item.description}
-                      </p>
-                    </div>
+      {/* Grid Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-5 md:gap-0 mx-auto justify-items-center  p-2">
+        {BrandsData.map((item) => {
+          return (
+            <motion.div
+              key={item.id}
+              variants={SlideUp(item.delay)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+              className="group rounded-xl text-center p-2"
+            >
+              <div className="flex justify-between items-stretch max-w-[500px] w-[500px] h-[200px] bg-gray-300  rounded-xl ">
+                <div className="w-1/2">
+                  {/* Image container */}
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="h-full rounded-3xl  img-shadow group-hover:scale-105 transition-all duration-500"
+                  />
+                </div>
+                <div className="w-1/2 h-full flex flex-col justify-between  text-left">
+                  {/* Text container */}
+                  <div>
+                    <h3 className="text-xl font-semibold text-red-300">
+                      {item.name}
+                    </h3>
+                    <p className="mt-2 text-sm text-zinc-50">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
-              </motion.div>
-            );
-          })}
-        </div>
-    
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
     </StyledWrapper>
   );
 };
 
-const StyledWrapper = styled.div`
-
-`;
+const StyledWrapper = styled.div``;
 
 export default Brands;

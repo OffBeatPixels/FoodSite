@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import logo from "../../assets/food/logo.jpg";
+import logo from "/src/assets/food/logo.jpg";
 import { motion } from "framer-motion";
 import { TiThMenu } from "react-icons/ti";
 import { NavLink } from "react-router-dom";
-import ExplorePage from './../Explore/ExplorePage';
+import ExplorePage from "./../Explore/ExplorePage";
 const navmenu = [
   { id: 1, title: "Home", path: "/", delay: "0.1s" },
   { id: 2, title: "About", path: "/about", delay: "0.2s" },

@@ -1,17 +1,17 @@
 import React from "react";
-import G1 from "../../../assets/food/G1.jpg";
-import G2 from "../../../assets/food/G2.jpg";
-import G3 from "../../../assets/food/G3.jpg";
-import G4 from "../../../assets/food/G4.jpg";
-import G5 from "../../../assets/food/G5.jpg";
-import G6 from "../../../assets/food/G6.jpg";
-import G7 from "../../../assets/food/G7.jpg";
-import G8 from "../../../assets/food/G8.jpg";
-import G9 from "../../../assets/food/G9.jpg";
-import G10 from "../../../assets/food/G10.jpg";
-import G11 from "../../../assets/food/G11.jpg";
+import G1 from "/src/assets/food/G1.jpg";
+import G2 from "/src/assets/food/G2.jpg";
+import G3 from "/src/assets/food/G3.jpg";
+import G4 from "/src/assets/food/G4.jpg";
+import G5 from "/src/assets/food/G5.jpg";
+import G6 from "/src/assets/food/G6.jpg";
+import G7 from "/src/assets/food/G7.jpg";
+import G8 from "/src/assets/food/G8.jpg";
+import G9 from "/src/assets/food/G9.jpg";
+import G10 from "/src/assets/food/G10.jpg";
+import G11 from "/src/assets/food/G11.jpg";
 import { motion } from "framer-motion";
-import { SlideUp } from "../../Hero/Hero";
+import { SlideUp } from "/src/components/Hero/Hero";
 const GalleryData = [
   {
     id: 1,

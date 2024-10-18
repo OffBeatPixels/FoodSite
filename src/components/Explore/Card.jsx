@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import G1 from "../../assets/food/G1.jpg";
-import G2 from "../../assets/food/clubhouse.jpg";
+import G1 from "/src/assets/food/G1.jpg";
+import G2 from "/src/assets/food/clubhouse.jpg";
 
 const cardsData = [
   {
@@ -19,44 +19,44 @@ const cardsData = [
 ];
 
 const Card = () => {
-    return (
-      <StyledWrapper className="w-full flex flex-col bg-[#97BC62] relative pb-24">
-        <div className="custom-shape">
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-              className="shape-fill"
-            />
-          </svg>
-        </div>
-        <h2 className="text-2xl text-white font-semibold uppercase py-8 text-center tracking-[5px]">
-          Explore
-        </h2>
-        <div className="flex flex-row justify-center items-center mb-5">
-          {cardsData.map((item) => (
-            <div className="card " key={item.id}>
-              <div className="border" />
-              <div className="content">
-                <div className="logo">
-                  <img
-                    src={item.img} // Use the mapped image from cardData
-                    alt={item.title}
-                    className="logo-img"
-                  />
-                </div>
-                <span className="logo-bottom-text">{item.title}</span>
+  return (
+    <StyledWrapper className="w-full flex flex-col bg-[#97BC62] relative pb-24">
+      <div className="custom-shape">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            className="shape-fill"
+          />
+        </svg>
+      </div>
+      <h2 className="text-2xl text-white font-semibold uppercase py-8 text-center tracking-[5px]">
+        Explore
+      </h2>
+      <div className="flex flex-row justify-center items-center mb-5">
+        {cardsData.map((item) => (
+          <div className="card " key={item.id}>
+            <div className="border" />
+            <div className="content">
+              <div className="logo">
+                <img
+                  src={item.img} // Use the mapped image from cardData
+                  alt={item.title}
+                  className="logo-img"
+                />
               </div>
-              <span className="bottom-text">Book now</span>
+              <span className="logo-bottom-text">{item.title}</span>
             </div>
-          ))}
-        </div>
-      </StyledWrapper>
-    );
+            <span className="bottom-text">Book now</span>
+          </div>
+        ))}
+      </div>
+    </StyledWrapper>
+  );
 };
 
 const StyledWrapper = styled.div`

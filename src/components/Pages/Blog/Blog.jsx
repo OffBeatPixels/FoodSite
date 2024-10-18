@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { SlideUp } from "../../Hero/Hero";
-import Popup from "./PopUp";
-import Blog1_1 from "../../../assets/food/Blog_1_1.jpg";
-import Blog1_2 from "../../../assets/food/Blog_1_2.jpg";
-import Blog1_3 from "../../../assets/food/Blog_1_3.jpg";
-import Blog1_4 from "../../../assets/food/Blog_1_4.jpg";
-import Blog1_5 from "../../../assets/food/Blog_1_5.jpg";
-import Blog1_6 from "../../../assets/food/Blog_1_6.jpg";
-import Blog2_1 from "../../../assets/food/Blog_2_1.png";
-import Blog2_2 from "../../../assets/food/Blog_2_2.jpeg";
-import Blog2_3 from "../../../assets/food/Blog_2_3.jpg";
-import Blog2_4 from "../../../assets/food/Blog_2_4.jpg";
+import { SlideUp } from "/src/components/Hero/Hero";
+import Popup from "/src/components/Pages/Blog/PopUp";
+import Blog1_1 from "/src/assets/food/Blog_1_1.jpg";
+import Blog1_2 from "/src/assets/food/Blog_1_2.jpg";
+import Blog1_3 from "/src/assets/food/Blog_1_3.jpg";
+import Blog1_4 from "/src/assets/food/Blog_1_4.jpg";
+import Blog1_5 from "/src/assets/food/Blog_1_5.jpg";
+import Blog1_6 from "/src/assets/food/Blog_1_6.jpg";
+import Blog2_1 from "/src/assets/food/Blog_2_1.png";
+import Blog2_2 from "/src/assets/food/Blog_2_2.jpeg";
+import Blog2_3 from "/src/assets/food/Blog_2_3.jpg";
+import Blog2_4 from "/src/assets/food/Blog_2_4.jpg";
 
 const BlogData = [
   {

@@ -1,9 +1,9 @@
 import React from "react";
-import Logo from "../../assets/food/logo.jpg";
+import Logo from "/src/assets/food/logo.jpg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Brands from "./../Brands/Brands";
-import Divider from "../Divider/Divider";
+// import Brands from "./../Brands/Brands";
+import Divider from "/src/components/Divider/Divider";
 import {
   FaFacebook,
   FaTwitter,

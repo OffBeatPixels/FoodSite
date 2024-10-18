@@ -1,7 +1,7 @@
 import React from "react";
-import BannerPng from "../../assets/food/banner.png";
+import BannerPng from "/src/assets/food/banner.png";
 import { motion } from "framer-motion";
-import { SlideUp } from "../Hero/Hero";
+import { SlideUp } from "/src/components/Hero/Hero";
 
 const Banner = () => {
   return (
