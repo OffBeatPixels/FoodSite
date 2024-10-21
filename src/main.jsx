@@ -13,7 +13,7 @@ import ServicePage from "./components/Services/ServicePage.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 // import Explore from "./components/Explore/ExplorePage.jsx";
-import ExplorePage from "./components/Explore/explorePage.jsx";
+import ExplorePage from "./components/Explore/ExplorePage.jsx";
 import GalleryFull from "./components/Pages/GalleryFull/GalleryFull.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
