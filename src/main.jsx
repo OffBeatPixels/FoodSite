@@ -13,15 +13,13 @@ import ServicePage from "./components/Services/ServicePage.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 // import Explore from "./components/Explore/ExplorePage.jsx";
-import ExplorePage from "./components/Explore/ExplorePage.jsx";
+import ExplorePage from "./components/Explore/explorePage.jsx";
 import GalleryFull from "./components/Pages/GalleryFull/GalleryFull.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
     <Navbar />
-    <main
-      className="flex-1"
-    >
+    <main className="flex-1">
       {/* Your routes go here */}
       <Routes>
         <Route index element={<App />} />
