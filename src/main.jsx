@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/InquiryForm" element={<InquiryForm />} />
         <Route path="/galleryFull" element={<GalleryFull />} />
         <Route path="/contact" element={<Contact />} />
-        {/* <Route path="/blog" element={<Blog />} /> */}
+        <Route path="/blog" element={<Blog />} />
         <Route path="/ExplorePage" element={<ExplorePage />} />
         {/* Fallback Route */}
         <Route path="*" element={<App />} />
