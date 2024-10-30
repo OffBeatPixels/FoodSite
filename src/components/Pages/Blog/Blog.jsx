@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { SlideUp } from "/src/components/Hero/Hero";
 import Popup from "/src/components/Pages/Blog/PopUp";
-import Blog1_1 from "/src/assets/food/Blog_1_1.jpg";
-import Blog1_2 from "/src/assets/food/Blog_1_2.jpg";
-import Blog1_3 from "/src/assets/food/Blog_1_3.jpg";
-import Blog1_4 from "/src/assets/food/Blog_1_4.jpg";
-import Blog1_5 from "/src/assets/food/Blog_1_5.jpg";
-import Blog1_6 from "/src/assets/food/Blog_1_6.jpg";
-import Blog2_1 from "/src/assets/food/Blog_2_1.png";
-import Blog2_2 from "/src/assets/food/Blog_2_2.jpeg";
-import Blog2_3 from "/src/assets/food/Blog_2_3.jpg";
-import Blog2_4 from "/src/assets/food/Blog_2_4.jpg";
+import Blog1_1 from "/src/assets/food/Blog_1_1.webp";
+import Blog1_2 from "/src/assets/food/Blog_1_2.webp";
+import Blog1_3 from "/src/assets/food/Blog_1_3.webp";
+import Blog1_4 from "/src/assets/food/Blog_1_4.webp";
+import Blog1_5 from "/src/assets/food/Blog_1_5.webp";
+import Blog1_6 from "/src/assets/food/Blog_1_6.webp";
+import Blog2_1 from "/src/assets/food/Blog_2_1.webp";
+import Blog2_2 from "/src/assets/food/Blog_2_2.webp";
+import Blog2_3 from "/src/assets/food/Blog_2_3.webp";
+import Blog2_4 from "/src/assets/food/Blog_2_4.webp";
+import Blog3_1 from "/src/assets/food/Blog_3_1.webp";
+import Blog3_2 from "/src/assets/food/Blog_3_2.webp";
 
 const BlogData = [
   {
@@ -277,6 +279,136 @@ const BlogData = [
       ],
     },
   },
+  {
+    id: 3,
+    name: "Role of an Event Consultant",
+    img: Blog3_1,
+    delay: 0.4,
+    text: {
+      title:
+        "Looking Forward to Hiring an Event Consultant? Here's What You Should Look for….",
+      sections: [
+        {
+          content: (
+            <motion.div
+              initial={{ x: -100 }}
+              animate={{ x: 0 }}
+              transition={{ type: "spring", stiffness: 100 }}
+            >
+              <p>
+                Are you excited about the upcoming wedding in your family? We
+                can understand that apart from the joy of all the festivities,
+                you are also worried about how you will be able to manage every
+                responsibility that has come your way. Managing every aspect of
+                the wedding is not a job for the faint hearted, after all, they
+                are not called the big fat Indian wedding just like that. Every
+                function from haldi to bhaat, to sangeet and cocktail, to the
+                actual wedding and reception require lots of preparation. A
+                sensible thing would be to let professionals assist you so that
+                you can enjoy the festivities without any worries. Thankfully,
+                we have event consultant and manager available to take care of
+                every possible situation.
+              </p>
+              <br />
+              <h2>What is the Role of an Event Consultant?</h2>
+
+              <p>
+                Planning an event, especially one at a large scale is not
+                everyone’s cup of tea. There are several things which might go
+                out of hand. However, instead of managing everything on your
+                own, you can take the assistance of event consultants. If you
+                know what you want but don’t know how to get it done, hiring an
+                event consultant would make things easy.
+                <br />
+                <br />
+                <h2>What to look for before hiring an event consultant?</h2>
+                Sometimes people hire <strong>event consultant</strong> to plan
+                the event, while others have some ideas but need professionals
+                to execute it. Whatever your requirement, ensure that you
+                discuss it with prospective candidates before hiring one. If you
+                have decided to trust the responsibilities of the event to an
+                event consultant, here’s what you should keep in mind before
+                hiring one:
+              </p>
+              <br />
+              <img
+                className="block w-[400px] mx-auto"
+                src={Blog2_1}
+                alt="image of Event management "
+              />
+              <ol>
+                <li>
+                  ❖ <strong>What is their general disposition?</strong> Since
+                  you will be trusting the entire responsibility of the event,
+                  from guest management to food and décor etc. to them, it is
+                  important that they have a friendly nature. We can assure you
+                  that guests love to be entertained by family members and if
+                  you are busy, your event consultant should be able to fill in
+                  for you. Apart from helping clients fulfil their dreams, we
+                  also believe in building relationships. Your guests are
+                  welcomed and taken care of in the best possible way and their
+                  needs are attended to pronto!
+                </li>
+                <br />
+                <img
+                  className="block w-[400px] mx-auto"
+                  src={Blog2_4}
+                  alt="image of planning occasions "
+                />
+                <li>
+                  ❖{" "}
+                  <strong>
+                    What responsibilities are they willing to share?
+                  </strong>{" "}
+                  There are several areas which require attention during any
+                  event. We assure that every tiny detail and requirements of
+                  the client is fulfilled as we work closely with graphic
+                  designers, PR agency, vendors, venue managers, caterers,
+                  decorators etc. Thanks to our cordial relationship with them
+                  the event is successfully managed. Additionally, we also take
+                  care of the logistics for the event. Thus, you do not have to
+                  worry about transportation, parking, security etc.
+                </li>
+                <br />
+                <li>
+                  ❖<strong> What is their experience?</strong> In the event
+                  management and catering industry, experience matters a lot.
+                  Apart from experience the drive to excel is also important.
+                  Having successfully executed events of different sizes, like
+                  conferences, birthday parties, weddings, receptions, etc. we
+                  have carved a niche for ourselves. Our team comprises of
+                  professionals from different fields which makes us a unique
+                  one-stop solution for all your event requirements.
+                </li>
+                <br />
+                <li>
+                  ❖ <strong>What do they charge?</strong> Last but not the
+                  least, the event consultant should be able to work within your
+                  budget. It is important to discuss this with the team before
+                  you finalise them. We offer budget friendly services to our
+                  clients, tailored as per your requirements.
+                </li>
+                <img
+                  className="block w-[400px] mx-auto"
+                  src={Blog3_2}
+                  alt="image of Family party "
+                />
+                <br />
+                If you liked the idea of having fun without stressing yourself,
+                it is time you made a decision. Hire event managers to relax and
+                enjoy the show put by them.
+              </ol>
+              <p>
+                Considering that event consultants can lower your stress, hiring
+                one seems like a good idea. Survey to hire the best event
+                consultant in your area.
+              </p>
+            </motion.div>
+          ),
+        },
+      ],
+    },
+  },
 ];
 
 export default function Blog() {
@@ -291,20 +423,25 @@ export default function Blog() {
   };
 
   return (
-    <section>
-      <div className="container pb-24">
+    <motion.section
+      initial={{ x: "-100%", opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{
+        ease: "linear",
+        duration: 1,
+        x: { duration: 0.8 },
+       
+      }}
+      exit={{ opacity: 0 }}
+    >
+      <div className="container pb-24 ">
         {/* Section Title */}
-        <motion.h3
-          variants={SlideUp(0.5)}
-          initial="hidden"
-          whileInView="show"
-          className="text-4xl text-center font-league font-semibold uppercase py-8"
-        >
+        <h3 className="text-4xl text-center font-league font-semibold uppercase py-8">
           Blogs
-        </motion.h3>
+        </h3>
 
         {/* Cards Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 place-items-center ">
           {BlogData.map((item) => (
             <div
               key={item.id}
@@ -314,9 +451,10 @@ export default function Blog() {
                 <img
                   src={item.img}
                   alt={item.name}
+                  loading="lazy"
                   className="
-                    w-44 rounded-2xl img-shadow
-                    group-hover:scale-x-110
+                   w-60   rounded-2xl 
+                    group-hover:scale-105
                     group-hover:translate-y-[-10px]
                     transition-all
                     duration-700 "
@@ -347,6 +485,6 @@ export default function Blog() {
           onClose={handleClosePopup}
         />
       )}
-    </section>
+    </motion.section>
   );
 }

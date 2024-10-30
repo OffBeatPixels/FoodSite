@@ -1,5 +1,5 @@
 import { useState } from "react";
-import iq from "/src/assets/food/iq.png";
+import iq from "/src/assets/food/iq.webp";
 
 function InquiryForm() {
   const [formData, setFormData] = useState({
@@ -65,7 +65,7 @@ function InquiryForm() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row mt-4  p-6 rounded-lg shadow-lg">
+    <div className="flex flex-col md:flex-row mt-4  p-6 rounded-lg ">
       <div className="w-full md:w-1/2 mb-4 md:mb-0">
         <img
           src={iq}
@@ -78,23 +78,23 @@ function InquiryForm() {
         className="bg-white shadow-md text-gray-700 rounded-3xl mx-auto p-6"
         name="google-sheet"
       >
-        <h1 className="uppercase font-semibold text-center text-2xl mb-4 text-teal-700">
+        <h1 className="uppercase font-semibold text-center text-2xl mb-4 ">
           Inquiry Form
         </h1>
 
-        <div className="mb-4 flex justify-between">
-          <div className="w-1/2 pr-2">
+        <div className="mb-4 md:flex justify-between">
+          <div className="md:w-1/2 md:pr-2">
             <label className="font-bold">NAME:</label>
             <input
               type="text"
               name="NAME"
               value={formData.NAME}
               onChange={handleChange}
-              className="w-full border-2 border-teal-500 rounded-xl p-2 transition duration-200 focus:outline-none focus:border-teal-600"
+              className="w-full border-2  rounded-xl p-2 transition duration-200 focus:outline-none focus:border-teal-600"
               required
             />
           </div>
-          <div className="w-1/2 pl-2">
+          <div className="md:w-1/2 md:pl-2">
             <label className="font-bold">EMAIL:</label>
             <input
               type="email"
@@ -107,8 +107,8 @@ function InquiryForm() {
           </div>
         </div>
 
-        <div className="mb-4 flex justify-between">
-          <div className="w-1/2 pr-2">
+        <div className="mb-4 md:flex justify-between">
+          <div className="md:w-1/2 md:pr-2">
             <label className="font-bold">MOBILE:</label>
             <input
               type="tel"
@@ -118,7 +118,7 @@ function InquiryForm() {
               className="w-full border-2 border-gray-300 rounded-xl p-2 transition duration-200 focus:outline-none focus:border-gray-400"
             />
           </div>
-          <div className="w-1/2 pl-2">
+          <div className="md:w-1/2 md:pl-2">
             <label className="font-bold">OPTION:</label>
             <select
               name="OPTION"
@@ -148,7 +148,7 @@ function InquiryForm() {
 
         <button
           type="submit"
-          className={`w-full bg-teal-600 text-white p-3 rounded-lg transition duration-300 hover:bg-teal-700 ${
+          className={`w-full bg-[#0B919C] text-white p-3 rounded-lg transition duration-300 hover:bg-green-700 ${
             loading ? "is-loading" : ""
           }`}
           disabled={loading}

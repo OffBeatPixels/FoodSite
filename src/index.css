@@ -3,8 +3,23 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
 
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgb(19, 19, 19);
+  /* font-weight: bolder; */
+  font-weight: bold;
+}
 @layer base {
   .text-outline {
     -webkit-text-stroke: 2px rgb(0, 0, 0);
@@ -184,29 +199,26 @@
   }
 }
 
-
-
 .wave-divider {
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   overflow: hidden;
   line-height: 0;
   position: absolute;
   /* bottom: 0; */
- 
 }
 
 .wave-divider svg {
-  padding-top: 2px;
-  width: calc(140% + 1.3px);
+  /* padding-bottom: 20px; */
+  width: calc(150% + 1.3px);
   height: 280px;
-  /* margin-top: 100px; */
+  /* margin-bottom: 100px; */
 }
 
 .wave-divider .shape-fill {
-  fill: hwb(183 38% 53%);
- 
+  fill: rgb(14, 168, 185);
 }
 
 .service-background {
@@ -214,9 +226,94 @@
   overflow: hidden;
 }
 
-
 /* Additional styles to ensure content is above the background */
 .service-background .container {
   position: relative; /* Ensure container content stays above the background */
   z-index: 1; /* Bring it above the pseudo-element */
+}
+
+.glide {
+  max-width: 800px;
+  margin: auto;
+  perspective: 1000px;
+}
+
+.glide__slides {
+  display: flex;
+}
+
+.glide__slide {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform-style: preserve-3d;
+  opacity: 0.5; /* Dims the non-active slides */
+}
+
+.glide__slide img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Active Slide */
+.glide__slide.glide__slide--active {
+  opacity: 1;
+  transform: scale(1.2) rotateY(0); /* Active slide is enlarged and not rotated */
+}
+
+/* Previous Slide */
+.glide__slide--previous {
+  transform: rotateY(-30deg) scale(0.8);
+}
+
+/* Next Slide */
+.glide__slide--next {
+  transform: rotateY(30deg) scale(0.8);
+}
+
+#animationelement {
+  background: url("book.png") no-repeat center;
+  background-size: contain;
+  /* margin-bottom: 80vh; */
+  height: 350px;
+  width: 200px;
+  position: fixed;
+  z-index: 999;
+  right: 0;
+  /* bottom: 6vh; */
+}
+
+@keyframes wiggle {
+  0% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+  25% {
+    transform: translateX(-50px) rotate(10deg);
+  }
+  50% {
+    transform: translateX(0) rotate(-5deg);
+  }
+  75% {
+    transform: translateX(-50px) rotate(10deg);
+  }
+  100% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+}
+
+.wiggle {
+  animation: wiggle 3s ease-in-out infinite; /* Adjust duration and easing as needed */
+}
+
+@keyframes scale-a-lil {
+  from {
+    scale: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  img {
+    animation: scale-a-lil linear both;
+    animation-timeline: view();
+    animation-range: 25vh 75vh;
+  }
 }

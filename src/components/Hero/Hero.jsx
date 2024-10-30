@@ -1,21 +1,21 @@
 import React from "react";
-// import FoodPng from "/src/assets/food/food.png";
-// import Spoon from "/src/assets/food/spoon.png";
-// import Leaf from "/src/assets/food/leaf.png";
-// import Banana from "/src/assets/food/banana.png";
+// import FoodPng from "/src/assets/food/food.webp";
+// import Spoon from "/src/assets/food/spoon.webp";
+// import Leaf from "/src/assets/food/leaf.webp";
+// import Banana from "/src/assets/food/banana.webp";
 // import { IoCartOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-// import Banner from "/src/assets/food/service_1.png";
+// import Banner from "/src/assets/food/service_1.webp";
 
 export const SlideUp = (delay) => {
   return {
     hidden: {
-      y: "-100%",
+      x: "-100%",
       opacity: 0,
     },
     show: {
-      y: 0,
+      x: 0,
       opacity: 1,
       transition: {
         duration: 0.6,
@@ -28,7 +28,7 @@ export const SlideUp = (delay) => {
 
 const Hero = () => {
   return (
-    <section className="mt-2 mx-auto  w-[90vw] h-[80vh] overflow-hidden  ">
+    <section className="mt-2 mx-auto  md:w-[90vw] md:h-[80vh] overflow-hidden  ">
       <video
         src="magnet-food.webm"
         alt="banner-video"
@@ -71,7 +71,7 @@ const Hero = () => {
             >
               Welcome to Magnet Foods, where we deliver An Experience with a
               Difference. We are a dependable, satisfaction-oriented provider of
-              catering services for industrial units and events. We understand
+              catering Operations for industrial units and events. We understand
               that celebrations are an integral part of our culture, and our aim
               is to make each one grand and special.
             </motion.p> */}

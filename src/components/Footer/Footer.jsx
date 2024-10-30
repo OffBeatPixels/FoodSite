@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "/src/assets/food/logo.jpg";
+import Logo from "/src/assets/food/logo.webp";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 // import Brands from "./../Brands/Brands";
@@ -17,15 +17,19 @@ const Footer = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative z-10 bg-emerald-900 dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+      className="relative z-10 bg-[#0B919C]  bottom-0 "
     >
-      <div className="container pt-16">
+      <div className="container pt-14">
         {/* Background Shape */}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 bottom-5 relative z-10">
           {/* Brand Info */}
           <div>
-            <img src={Logo} alt="Logo" className="w-24 mb-4 rounded-full" />
+            <img
+              src={Logo}
+              alt="Logo"
+              className="w-40 rounded-full "
+            />
             <p className="mb-4">
               44A, IT Park, Sahastradhara Road, Dehradun - 248001, Dehradun,
               Uttarakhand 248009
@@ -33,12 +37,17 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="grid grid-cols-2 z-99">
+          <div className="grid grid-cols-2 z-99 ">
             <div>
-              <h3 className="font-semibold text-xl  mb-4">Quick Links</h3>
+              <h3 className="font-semibold text-xl  mb-4 text-white ">
+                Quick Links
+              </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/contact" className=" inline-block footer-link">
+                  <Link
+                    to="/contact"
+                    className="hover:text-white inline-block footer-link"
+                  >
                     Contact Us
                   </Link>
                 </li>
@@ -49,10 +58,10 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="/servicePage"
+                    to="/Operations"
                     className="hover:text-white footer-link"
                   >
-                    Our Services
+                    Our Operations
                   </Link>
                 </li>
               </ul>
@@ -77,14 +86,14 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="mt-4 z-99">
-            <h2 className="text-xl font-semibold mb-2">Follow Us</h2>
-            <div className="flex gap-4">
+          <div className=" z-99 ">
+            <h2 className="text-xl font-semibold mb-2 text-white">Follow Us</h2>
+            <div className="flex gap-4 ">
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-800 hover:text-blue-600 transition-colors"
+                className=" hover:text-blue-600 transition-colors"
               >
                 <FaFacebook size={24} />
               </a>
@@ -92,7 +101,7 @@ const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-800 hover:text-blue-400 transition-colors"
+                className=" hover:text-blue-400 transition-colors"
               >
                 <FaTwitter size={24} />
               </a>
@@ -100,7 +109,7 @@ const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-800 hover:text-pink-600 transition-colors"
+                className=" hover:text-pink-600 transition-colors"
               >
                 <FaInstagram size={24} />
               </a>
@@ -108,7 +117,7 @@ const Footer = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-800 hover:text-blue-700 transition-colors"
+                className=" hover:text-blue-700 transition-colors"
               >
                 <FaLinkedin size={24} />
               </a>
@@ -130,7 +139,7 @@ const Footer = () => {
           </div> */}
         </div>
       </div>
-      <Divider />
+      {/* <Divider /> */}
     </motion.footer>
   );
 };

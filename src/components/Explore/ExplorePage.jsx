@@ -1,8 +1,8 @@
 import React from "react";
-import Service1 from "/src/assets/food/service_1.png";
-import Service2 from "/src/assets/food/service_2.png";
-import Service3 from "/src/assets/food/service_3.png";
-import Service4 from "/src/assets/food/service_4.png";
+import Service1 from "/src/assets/food/service_1.webp";
+import Service2 from "/src/assets/food/service_2.webp";
+import Service3 from "/src/assets/food/service_3.webp";
+import Service4 from "/src/assets/food/service_4.webp";
 import { motion } from "framer-motion";
 import { SlideUp } from "/src/components/Hero/Hero";
 import { useLocation } from "react-router-dom";
@@ -18,13 +18,13 @@ const ExplorePageData = [
       <ol className="p-5">
         <p>
           At Ace Caterers, we specialize in providing high-quality catering
-          services tailored to the needs of industrial and institutional
+          Operations tailored to the needs of industrial and institutional
           clients. Our catering is all about convenience, cleanliness, and
           customization. Our service is designed to meet the unique requirements
           of large-scale operations. Our focus is aimed at taking over your
-          concern about the canteen services from DAY 1 bringing about a visible
-          change in it and leaving you free to concentrate on your production
-          operations and needs.
+          concern about the canteen Operations from DAY 1 bringing about a
+          visible change in it and leaving you free to concentrate on your
+          production operations and needs.
         </p>
         <p>From factories to educational institutions, we offer:</p>
         <br />
@@ -106,6 +106,10 @@ const ExplorePage = () => {
   const location = useLocation();
 
   useEffect(() => {
+    document.getElementById("animationelement").classList.add("wiggle"); // Add the 'wiggle' class on page load
+  }, []);
+
+  useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace("#", "");
       const element = document.getElementById(id);
@@ -116,19 +120,30 @@ const ExplorePage = () => {
   }, [location]);
 
   return (
-    <section>
-      <div className="container">
+    <motion.section
+      initial={{ x: "-100%", opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{
+        ease: "linear",
+        duration: 1,
+        x: { duration: 0.8 },
+      }}
+      exit={{ opacity: 0 }}
+    >
+      {/* <div className="container"> */}
+      <div id="animationelement"></div>
+      <div>
         <motion.h3
           variants={SlideUp(0)}
           initial="hidden"
           whileInView="show"
-          className="text-2xl font-semibold text-darkGreen uppercase py-8"
+          className="text-3xl font-serif font-bold  uppercase text-center rounded-tl-3xl rounded-br-3xl bg-[#0B919C] py-8"
         >
-          Event-Booking
+          Explore
         </motion.h3>
 
         {/* Grid Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-10">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-10">
           {ExplorePageData.map((item) => (
             <motion.div
               key={item.id}
@@ -136,10 +151,12 @@ const ExplorePage = () => {
               whileInView="show"
               id={`explorePageExplorePage${item.id}`} // Add the corresponding id for hash navigation
               className="group bg-white/50 shadow-md p-3 rounded-md gap-5"
+            
             >
               <img
                 src={item.img}
                 alt={item.name}
+                 loading="lazy"
                 className="w-72 mx-auto rounded-xl img-shadow group-hover:scale-110 transition-all duration-500"
               />
               <div>
@@ -150,9 +167,163 @@ const ExplorePage = () => {
               </div>
             </motion.div>
           ))}
+        </div> */}
+        {/* <div className="container">
+          <div className="w-full" >
+            <div className="w-full pt-14">
+              <img src={Service1} alt="Industrial Catering" />
+            </div>
+             loading="lazy"<div cl
+            assName="w-[50%]">
+              <h1 className="text-2xl font-bold pb-5">Industrial Catering</h1>
+              <p>
+                At Ace Caterers, we specialize in providing high-quality
+                catering Operations tailored to the needs of industrial and
+                institutional clients. Our catering is all about convenience,
+                cleanliness, and customization. Our service is designed to meet
+                the unique requirements of large-scale operations. Our focus is
+                aimed at taking over your concern about the canteen Operations
+                from DAY 1 bringing about a visible change in it and leaving
+                you free to concentrate on your production operations and needs.
+              </p>
+            </div>
+          </div>
+        </div> */}
+
+        {/* Mahogany Farms */}
+        <div className="text-center  p-5 ">
+          <div className="relative">
+            <img
+              src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80"
+              alt="Mahogany Farms"
+              loading="lazy"
+              className="w-full h-[50vh] object-cover"
+            />
+            <div className="absolute  w-[55%] md:top-1/2 left-[70%] transform -translate-x-1/2 -translate-y-1/4 bg-black text-white p-5 text-center">
+              <h2 className=" text-xl text-white md:text-2xl font-bold">
+                Mahogany Farms
+              </h2>
+              <p className="my-2 ">
+                Welcome to our farmstay, where you can relax, rejuvenate, and
+                simply have fun. Immerse yourself in the beauty of nature, enjoy
+                fresh air, and experience the joys of farm life. Whether you're
+                looking to unwind or engage in exciting activities, our farmstay
+                offers the perfect escape for everyone. Come and create
+                unforgettable memories with us!
+              </p>
+              <button className="bg-yellow-400 px-4 py-2 mt-2 text-black font-medium">
+                Book Now!
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-2 p-5">
+          <img
+            src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80"
+            alt="Interior 1"
+            loading="lazy"
+            className="w-full h-[40vh] object-cover"
+          />
+          <div className="flex flex-col gap-1 w-full">
+            <div className="flex gap-2  h-[40vh]">
+              <img
+                src="https://i.pinimg.com/564x/00/be/ec/00beecc179d66bc585f496108907b26e.jpg"
+                alt="Interior 2"
+                loading="lazy"
+                className="w-[65%] rounded object-cover"
+              />
+              <img
+                src="https://i.pinimg.com/1200x/38/f3/9f/38f39f7c16d097417ece90e05654f4c9.jpg"
+                alt="Interior 3"
+                loading="lazy"
+                className="w-[35%] rounded object-cover"
+              />
+            </div>
+            <div className="flex gap-2 w-full h-[40vh]">
+              <img
+                src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80"
+                alt="Exterior 1"
+                loading="lazy"
+                className="w-[35%] rounded object-cover"
+              />
+              <img
+                src="https://imgs.search.brave.com/YpA7994DFO_s-QyPXJXZuDZ8SxhBya30gOiqocT2EDM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuYWRzdHRjLmNv/bS9tZWRpYS9pbWFn/ZXMvNWQzMC9lOTdh/LzI4NGQvZDEyNy85/MzAwLzAxNTQvbmV3/c2xldHRlci9hLTkz/LmpwZz8xNTYzNDg2/NTMw"
+                alt="Exterior 2"
+                loading="lazy"
+                className="w-[65%] rounded object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Green Pasture */}
+
+        <div className="text-center p-5">
+          <div className="relative">
+            <img
+              src="https://images.pexels.com/photos/19003913/pexels-photo-19003913/free-photo-of-golfer-preparing-to-hit-ball.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Green Pasture"
+              loading="lazy"
+              className="w-full h-[50vh] object-cover"
+            />
+            <div className="absolute w-[55%] top-1/2 left-[70%] transform -translate-x-1/2 -translate-y-1/4 bg-black text-white p-5 text-center">
+              <h2 className="text-2xl text-white font-bold">Green Pasture</h2>
+              <p className="my-2">
+                Welcome to our farmstay, where you can relax, rejuvenate, and
+                simply have fun. Immerse yourself in the beauty of nature, enjoy
+                fresh air, and experience the joys of farm life. Whether you're
+                looking to unwind or engage in exciting activities, our farmstay
+                offers the perfect escape for everyone. Come and create
+                unforgettable memories with us!
+              </p>
+              <button className="bg-yellow-400 px-4 py-2 mt-2 text-black font-medium">
+                Book Now!
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-2 p-8">
+          <img
+            src="https://images.pexels.com/photos/209296/pexels-photo-209296.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Interior 1"
+            loading="lazy"
+            className="w-full h-[40vh] object-cover"
+          />
+          <div className="flex flex-col gap-2 w-full">
+            <div className="flex gap-2  h-[40vh]">
+              <img
+                src="https://imgs.search.brave.com/pKZ42h_XVHls3Np0WElO1UU6k2iJeOTdv1rJ-kPEzfU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA5Lzc0LzkyLzEx/LzM2MF9GXzk3NDky/MTExNF9BQ0ZnZG9r/ZDZaaEM2eks4RExH/SjJkRkxhb05KMlN6/YS5qcGc"
+                alt="Interior 2"
+                loading="lazy"
+                className="w-[65%] rounded object-cover"
+              />
+              <img
+                src="https://images.pexels.com/photos/209296/pexels-photo-209296.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Interior 3"
+                loading="lazy"
+                className="w-[35%] rounded object-cover"
+              />
+            </div>
+            <div className="flex gap-2 w-full h-[40vh]">
+              <img
+                src="https://images.pexels.com/photos/209296/pexels-photo-209296.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Exterior 1"
+                loading="lazy"
+                className="w-[35%] rounded object-cover"
+              />
+              <img
+                src="https://imgs.search.brave.com/Clh6qoRY6C6foLgoeV45kpSlhB-AlThbToLKtFSao3E/rs:fit:860:0:0:0/g:ce/aHR0cDovL3d3dy5r/ZXJhbGFob3VzZXBs/YW5uZXIuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE1LzA3/L2VsZXZhdGlvbi5q/cGc"
+                alt="Exterior 2"
+                loading="lazy"
+                className="w-[65%] rounded object-cover"
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

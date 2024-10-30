@@ -1,15 +1,16 @@
 import React from "react";
-import G1 from "/src/assets/food/G1.jpg";
-import G2 from "/src/assets/food/G2.jpg";
-import G3 from "/src/assets/food/G3.jpg";
-import G4 from "/src/assets/food/G4.jpg";
-import G5 from "/src/assets/food/G5.jpg";
-import G6 from "/src/assets/food/G6.jpg";
-import G7 from "/src/assets/food/G7.jpg";
-import G8 from "/src/assets/food/G8.jpg";
-import G9 from "/src/assets/food/G9.jpg";
-import G10 from "/src/assets/food/G10.jpg";
-import G11 from "/src/assets/food/G11.jpg";
+import G1 from "/src/assets/food/G1.webp";
+import G2 from "/src/assets/food/G2.webp";
+import G3 from "/src/assets/food/G3.webp";
+import G4 from "/src/assets/food/G4.webp";
+import G5 from "/src/assets/food/G5.webp";
+import G6 from "/src/assets/food/G6.webp";
+import G7 from "/src/assets/food/G7.webp";
+import G8 from "/src/assets/food/G8.webp";
+import G9 from "/src/assets/food/G9.webp";
+import G10 from "/src/assets/food/G10.webp";
+import G11 from "/src/assets/food/G11.webp";
+import gallery from "../../../assets/food/gallery.webp";
 import { motion } from "framer-motion";
 import { SlideUp } from "/src/components/Hero/Hero";
 const GalleryData = [
@@ -76,48 +77,72 @@ const GalleryData = [
     price: "$8",
     delay: 1.2,
   },
-  {
-    id: 10,
-    name: "person",
-    img: G10,
-    price: "$8",
-    delay: 1.2,
-  },
-  {
-    id: 11,
-    name: "person",
-    img: G11,
-    price: "$8",
-    delay: 1.2,
-  },
+  // {
+  //   id: 10,
+  //   name: "person",
+  //   img: G10,
+  //   price: "$8",
+  //   delay: 1.2,
+  // },
+  // {
+  //   id: 11,
+  //   name: "person",
+  //   img: G11,
+  //   price: "$8",
+  //   delay: 1.2,
+  // },
 ];
 
 const GalleryFull = () => {
   return (
-    <section className="relative">
+    <motion.section
+      initial={{ x: "-100%", opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{
+        ease: "linear",
+        duration: 1,
+        x: { duration: 0.8 },
+      }}
+      exit={{ opacity: 0 }}
+      className="relative pb-10"
+    >
       {/* Colored Shape Overlay */}
       <div className="absolute inset-0 flex justify-center items-center">
         <div className="w-full h-full relative">
           {/* First Shape (left) */}
-          <div className="absolute top-0 left-0 w-full h-full bg-[#111e23] clip-left"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[#ffffff]  clip-left"></div>
+          {/* <div className="absolute top-0 left-0 w-full h-full  clip-left"></div> */}
           {/* Second Shape (right) */}
-          <div className="absolute top-0 left-0 w-full h-full bg-emerald-900 clip-right"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[#fefefe] clip-right"></div>
+          {/* <div className="absolute top-0 left-0 w-full h-full  clip-right"></div> */}
         </div>
       </div>
+      <motion.h3
+        // variants={SlideUp(0)}
+        // initial="hidden"
+        // whileInView="show"
+        className=" h-[60vh]  relative "
+        style={{
+          background: `url(${gallery}) center/contain no-repeat`,
+          backgroundSize: "cover",
+        }}
+      ></motion.h3>
 
       <div className="container py-1 relative z-10">
         {/* Section Title */}
-        <motion.h3
+        {/* <motion.h3
           variants={SlideUp(0.5)}
           initial="hidden"
           whileInView="show"
-          className="text-4xl text-center text-white font-league font-semibold uppercase py-8"
-        >
-          Gallery
-        </motion.h3>
+          className="text-4xl text-center font-league font-semibold uppercase py-20 "
+          style={{
+            background: `url(${gallery}) center/cover no-repeat `,
+            width: "100%",
+          }}
+        ></motion.h3> */}
 
         {/* Cards Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 place-items-center mt-1">
           {GalleryData.map((item) => (
             <div
               key={item.id}
@@ -127,12 +152,13 @@ const GalleryFull = () => {
                 <img
                   src={item.img}
                   alt="Gallery"
+                  loading="lazy"
                   className="
                 w-72 rounded-2xl 
                 group-hover:scale-x-110
                 group-hover:translate-y-[-10px]
                 transition-all
-                duration-700"
+                duration-700 "
                 />
               </div>
               <div>
@@ -154,7 +180,7 @@ const GalleryFull = () => {
           clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
         }
       `}</style>
-    </section>
+    </motion.section>
   );
 };
 

@@ -51,7 +51,6 @@ export default function BannerSlider() {
       <div className="slider" ref={sliderRef}>
         <div className="list sm:object-scale-down">
           <div className="item ">
-           
             <video
               src="./src/assets/food/magnet-food 2.mp4"
               alt="banner-video"
@@ -61,16 +60,16 @@ export default function BannerSlider() {
             />
           </div>
           {/* <div className="item">
-            <img src="./src/assets/food/Service_1.png" alt="Service 1" />
+            <img src="./src/assets/food/Service_1.webp" alt="Service 1" />
           </div>
           <div className="item">
-            <img src="./src/assets/food/Service_2.png" alt="Service 2" />
+            <img src="./src/assets/food/Service_2.webp" alt="Service 2" />
           </div>
           <div className="item">
-            <img src="./src/assets/food/Service_3.png" alt="Service 3" />
+            <img src="./src/assets/food/Service_3.webp" alt="Service 3" />
           </div>
           <div className="item">
-            <img src="./src/assets/food/Service_4.png" alt="Service 4" />
+            <img src="./src/assets/food/Service_4.webp" alt="Service 4" />
           </div> */}
         </div>
 

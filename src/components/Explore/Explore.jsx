@@ -1,8 +1,8 @@
 import React from "react";
-// import Service1 from "/src/assets/food/service_1.png";
-import Service2 from "/src/assets/food/service_2.png";
-// import Service3 from "/src/assets/food/service_3.png";
-// import Service4 from "/src/assets/food/service_4.png";
+// import Service1 from "/src/assets/food/service_1.webp";
+import Service2 from "/src/assets/food/service_2.webp";
+// import Service3 from "/src/assets/food/service_3.webp";
+// import Service4 from "/src/assets/food/service_4.webp";
 import { delay, motion } from "framer-motion";
 import { SlideUp } from "/src/components/Hero/Hero";
 import { Link } from "react-router-dom";
@@ -14,10 +14,10 @@ const ExploreData = [
   {
     id: 1,
     name: "Mahogany Farms",
-    img: "https://i.pinimg.com/originals/18/84/61/188461b5b6c99c2c1ae905714b634e32.jpg",
+    img: "https://i.pinimg.com/originals/18/84/61/188461b5b6c99c2c1ae905714b634e32.webp",
     // price: "$10",
     description:
-      "At Ace Caterers, we specialize in providing high-quality catering services tailored to the needs of industrial and institutional clients... ",
+      "At Ace Caterers, we specialize in providing high-quality catering Operations tailored to the needs of industrial and institutional clients... ",
     delay: 0.4,
   },
   {
@@ -59,6 +59,7 @@ const Explore = () => {
                 <img
                   src={item.img}
                   alt="Image"
+                  loading="lazy"
                   className="w-[400px] rounded-xl img-shadow  group-hover:scale-125 overflow-hidden transition-all duration-500 mb-5 mt-5"
                 />
 

@@ -539,10 +539,10 @@
 //           About
 //         </Link>
 //         <Link
-//           to="/services"
+//           to="/Operations"
 //           className="flex items-center p-4 text-lg hover:bg-gray-700"
 //         >
-//           Services
+//           Operations
 //         </Link>
 //         <Link
 //           to="/gallery"
@@ -564,7 +564,6 @@
 // export default Sidebar;
 
 // src/components/Sidebar.jsx
-
 
 import React, { useState } from "react";
 import { HiMenuAlt2, HiX } from "react-icons/hi";
@@ -618,11 +617,11 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
-                to="/services"
+                to="/Operations"
                 className="block py-2 px-4 hover:bg-gray-700"
                 onClick={toggleSidebar}
               >
-                Services
+                Operations
               </Link>
             </li>
             <li>

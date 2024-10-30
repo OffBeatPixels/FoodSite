@@ -1,5 +1,5 @@
 import React from "react";
-import BannerPng from "/src/assets/food/banner.png";
+import BannerPng from "/src/assets/food/banner.webp";
 import { motion } from "framer-motion";
 import { SlideUp } from "/src/components/Hero/Hero";
 
@@ -25,7 +25,7 @@ const Testimonial = () => {
                 variants={SlideUp(0.8)}
                 initial="hidden"
                 whileInView="show"
-                src="./img.jpg"
+                src="./img.webp"
                 alt=""
                 className="w-14 h-14 rounded-full object-cover"
               />

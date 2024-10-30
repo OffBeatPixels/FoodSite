@@ -1,18 +1,19 @@
 import React from "react";
-import G1 from "/src/assets/food/G1.jpg";
-import G2 from "/src/assets/food/G2.jpg";
-import G3 from "/src/assets/food/G3.jpg";
-import G4 from "/src/assets/food/G4.jpg";
-import G5 from "/src/assets/food/G5.jpg";
-import G6 from "/src/assets/food/G6.jpg";
-import G7 from "/src/assets/food/G7.jpg";
-import G8 from "/src/assets/food/G8.jpg";
-import G9 from "/src/assets/food/G9.jpg";
-import G10 from "/src/assets/food/G10.jpg";
-import G11 from "/src/assets/food/G11.jpg";
+import G1 from "/src/assets/food/G1.webp";
+import G2 from "/src/assets/food/G2.webp";
+import G3 from "/src/assets/food/G3.webp";
+import G4 from "/src/assets/food/G4.webp";
+import G5 from "/src/assets/food/G5.webp";
+import G6 from "/src/assets/food/G6.webp";
+import G7 from "/src/assets/food/G7.webp";
+import G8 from "/src/assets/food/G8.webp";
+import G9 from "/src/assets/food/G9.webp";
+import G10 from "/src/assets/food/G10.webp";
+import G11 from "/src/assets/food/G11.webp";
 import { motion } from "framer-motion";
 import { SlideUp } from "/src/components/Hero/Hero";
 import { Link } from "react-router-dom";
+import GlideSlider from "../GliderSlider";
 const GalleryData = [
   {
     id: 1,
@@ -95,16 +96,16 @@ const GalleryData = [
 
 const Gallery = () => {
   return (
-    <section className="relative">
+    <section className="relative  pb-10 bg-[#f5f5f5]">
       {/* Colored Shape Overlay */}
-      <div className="absolute inset-0 flex justify-center items-center">
-        <div className="w-full h-full relative">
-          {/* First Shape (left) */}
-          <div className="absolute top-0 left-0 w-full h-full bg-[#111e23] clip-left"></div>
-          {/* Second Shape (right) */}
-          <div className="absolute top-0 left-0 w-full h-full bg-emerald-900 clip-right"></div>
-        </div>
-      </div>
+      {/* <div className="absolute inset-0 flex justify-center items-center"> */}
+      {/* <div className="w-full h-full relative"> */}
+      {/* First Shape (left) */}
+      {/* <div className="absolute top-0 left-0 w-full h-full bg-[#6f3e07]   bg-[#f5f5f5]  clip-left"></div> */}
+      {/* Second Shape (right) */}
+      {/* <div className="absolute top-0 left-0 w-full h-full bg-[#6f3e07]  bg-[#f5f5f5]   clip-right"></div> */}
+      {/* </div> */}
+      {/* </div> */}
 
       <div className="container py-1 relative z-10">
         {/* Section Title */}
@@ -112,11 +113,16 @@ const Gallery = () => {
           variants={SlideUp(0.5)}
           initial="hidden"
           whileInView="show"
-          className="text-4xl text-center text-white font-league font-semibold uppercase py-8 "
+          className="text-2xl  font-semibold uppercase py-8 text-center tracking-[5px]"
         >
-          <Link to="/galleryFull" className="border-4 border-x-2 border-white">
-            Gallery
-          </Link>
+          <motion.div
+            whileHover={{
+              scale: 1.2,
+              textShadow: "0px 0px 8px rgb(155,55,5)",
+            }}
+          >
+            <Link to="/galleryFull">Gallery</Link>
+          </motion.div>
         </motion.h3>
 
         {/* Cards Section */}
@@ -131,7 +137,7 @@ const Gallery = () => {
                   src={item.img}
                   alt="Gallery"
                   className="
-                w-72 rounded-2xl img-shadow
+                w-72 rounded-2xl 
                 group-hover:scale-x-110
                 group-hover:translate-y-[-10px]
                 transition-all
@@ -147,6 +153,7 @@ const Gallery = () => {
           ))}
         </div>
       </div>
+      {/* <GlideSlider/> */}
 
       <style jsx>{`
         .clip-left {
