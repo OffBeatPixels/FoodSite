@@ -169,6 +169,10 @@ const GalleryFull = () => {
             </div>
           ))}
         </div>
+        <p className="text-center font-bold italic">
+          Disclaimer - Keeping in view the privacy of our customers, we don't
+          post their pictures.
+        </p>
       </div>
 
       <style jsx>{`

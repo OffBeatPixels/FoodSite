@@ -19,21 +19,14 @@ const Footer = () => {
       transition={{ duration: 0.5 }}
       className="relative z-10 bg-[#0B919C]  bottom-0 "
     >
-      <div className="container pt-14">
+      <div className="container pt-10">
         {/* Background Shape */}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 bottom-5 relative z-10">
           {/* Brand Info */}
           <div>
-            <img
-              src={Logo}
-              alt="Logo"
-              className="w-40 rounded-full "
-            />
-            <p className="mb-4">
-              44A, IT Park, Sahastradhara Road, Dehradun - 248001, Dehradun,
-              Uttarakhand 248009
-            </p>
+            <img src={Logo} alt="Logo" className="w-40 rounded-full " />
+            <p className="mb-4">Bhopal Madhya Pradesh</p>
           </div>
 
           {/* Quick Links */}

@@ -9,11 +9,11 @@ import styled from "styled-components";
 const BrandsData = [
   {
     id: 1,
-    name: "Chimes Café ",
-    img: Company1,
+    name: "Ace Caterers ",
+    img: Company3,
     description:
-      "Chimes Café is the brand under which we run restaurants in army cantonments. Keeping up with the traditions of fine dining in Army",
-    delay: 0.4,
+      "Ace Caterers is the Industrial Catering brand that operates industrial canteens. Under this brand consulting on setting-up of kitchens is also provided.",
+    delay: 0.8,
   },
   {
     id: 2,
@@ -23,21 +23,22 @@ const BrandsData = [
       "Drool Ah is the café brand based on QSR model. Menu of café is set in a manner to cut across the age barrier. Fusion food is the USP of this brand.",
     delay: 0.6,
   },
+
   {
     id: 3,
-    name: "Ace Caterers ",
-    img: Company3,
-    description:
-      "Ace Caterers is the Industrial Catering brand that operates industrial canteens. Under this brand consulting on setting-up of kitchens is also provided.",
-    delay: 0.8,
-  },
-  {
-    id: 4,
     name: "Magnet Foods ",
     img: Company4,
     description:
       "Magnet Foods is the brand under which events are taken up – corporate, weddings, get-togethers oesaurhdrfughsdusdofusdouf etc. ",
     delay: 1,
+  },
+  {
+    id: 4,
+    name: "Chimes Café ",
+    img: Company1,
+    description:
+      "Chimes Café is the brand under which we run restaurants in army cantonments. Keeping up with the traditions of fine dining in Army",
+    delay: 0.4,
   },
 ];
 

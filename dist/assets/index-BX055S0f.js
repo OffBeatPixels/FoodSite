@@ -18788,11 +18788,11 @@ Gv.forEach(function (e) {
 const pj = [
     {
       id: 1,
-      name: "Chimes Café ",
-      img: lE,
+      name: "Ace Caterers ",
+      img: cE,
       description:
-        "Chimes Café is the brand under which we run restaurants in army cantonments. Keeping up with the traditions of fine dining in Army",
-      delay: 0.4,
+        "Ace Caterers is the Industrial Catering brand that operates industrial canteens. Under this brand consulting on setting-up of kitchens is also provided.",
+      delay: 0.8,
     },
     {
       id: 2,
@@ -18804,19 +18804,19 @@ const pj = [
     },
     {
       id: 3,
-      name: "Ace Caterers ",
-      img: cE,
-      description:
-        "Ace Caterers is the Industrial Catering brand that operates industrial canteens. Under this brand consulting on setting-up of kitchens is also provided.",
-      delay: 0.8,
-    },
-    {
-      id: 4,
       name: "Magnet Foods ",
       img: dE,
       description:
         "Magnet Foods is the brand under which events are taken up – corporate, weddings, get-togethers oesaurhdrfughsdusdofusdouf etc. ",
       delay: 1,
+    },
+    {
+      id: 4,
+      name: "Chimes Café ",
+      img: lE,
+      description:
+        "Chimes Café is the brand under which we run restaurants in army cantonments. Keeping up with the traditions of fine dining in Army",
+      delay: 0.4,
     },
   ],
   a0 = () =>
@@ -19951,7 +19951,7 @@ const Bj = () =>
       transition: { duration: 0.5 },
       className: "relative z-10 bg-[#0B919C]  bottom-0 ",
       children: f.jsx("div", {
-        className: "container pt-14",
+        className: "container pt-10",
         children: f.jsxs("div", {
           className:
             "grid grid-cols-1 md:grid-cols-3 gap-12 bottom-5 relative z-10",
@@ -19965,8 +19965,7 @@ const Bj = () =>
                 }),
                 f.jsx("p", {
                   className: "mb-4",
-                  children:
-                    "44A, IT Park, Sahastradhara Road, Dehradun - 248001, Dehradun, Uttarakhand 248009",
+                  children: "Bhopal Madhya Pradesh",
                 }),
               ],
             }),
@@ -20161,42 +20160,49 @@ const Bj = () =>
             backgroundSize: "cover",
           },
         }),
-        f.jsx("div", {
+        f.jsxs("div", {
           className: "container py-1 relative z-10",
-          children: f.jsx("div", {
-            className:
-              "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 place-items-center mt-1",
-            children: Uj.map((e) =>
-              f.jsxs(
-                "div",
-                {
-                  className: "group space-y-3 text-center rounded-xl",
-                  children: [
-                    f.jsx("div", {
-                      className: "flex justify-center  items-center",
-                      children: f.jsx("img", {
-                        src: e.img,
-                        alt: "Gallery",
-                        loading: "lazy",
-                        className: `\r
+          children: [
+            f.jsx("div", {
+              className:
+                "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 place-items-center mt-1",
+              children: Uj.map((e) =>
+                f.jsxs(
+                  "div",
+                  {
+                    className: "group space-y-3 text-center rounded-xl",
+                    children: [
+                      f.jsx("div", {
+                        className: "flex justify-center  items-center",
+                        children: f.jsx("img", {
+                          src: e.img,
+                          alt: "Gallery",
+                          loading: "lazy",
+                          className: `\r
                 w-72 rounded-2xl \r
                 group-hover:scale-x-110\r
                 group-hover:translate-y-[-10px]\r
                 transition-all\r
                 duration-700 `,
+                        }),
                       }),
-                    }),
-                    f.jsx("div", {
-                      children: f.jsx("p", {
-                        className: "text-xl font-bold text-yellow-500",
+                      f.jsx("div", {
+                        children: f.jsx("p", {
+                          className: "text-xl font-bold text-yellow-500",
+                        }),
                       }),
-                    }),
-                  ],
-                },
-                e.id
-              )
-            ),
-          }),
+                    ],
+                  },
+                  e.id
+                )
+              ),
+            }),
+            f.jsx("p", {
+              className: "text-center font-bold italic",
+              children:
+                "Disclaimer - Keeping in view the privacy of our customers, we don't post their pictures.",
+            }),
+          ],
         }),
         f.jsx("style", {
           jsx: !0,
