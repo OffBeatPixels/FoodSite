@@ -11,7 +11,7 @@ const navmenu = [
   { id: 4, title: "Gallery", path: "/gallery", delay: "0.4s" },
   {
     id: 5,
-    title: "Operations",
+    title: "Services",
     path: "/Operations",
     delay: "0.5s",
   },

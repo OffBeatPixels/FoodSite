@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 const VideoAnimation = () => {
   const [videoWidth, setVideoWidth] = useState("100%");
- const text = "OUR OPERATIONS".split(" ");
+ const text = "OUR SERVICES".split(" ");
  // Add `inView` to detect scroll visibility
  const { ref, inView } = useInView({
    threshold: 0.5,
