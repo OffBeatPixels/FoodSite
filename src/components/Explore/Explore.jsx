@@ -1,8 +1,8 @@
 import React from "react";
-// import Service1 from "/src/assets/food/service_1.webp";
-import Service2 from "/src/assets/food/service_2.webp";
-// import Service3 from "/src/assets/food/service_3.webp";
-// import Service4 from "/src/assets/food/service_4.webp";
+import Service1 from "/src/assets/food/service_1.png";
+import Service2 from "/src/assets/food/service_2.png";
+import Service3 from "/src/assets/food/service_3.png";
+import Service4 from "/src/assets/food/service_4.png";
 import { delay, motion } from "framer-motion";
 import { SlideUp } from "/src/components/Hero/Hero";
 import { Link } from "react-router-dom";
@@ -30,6 +30,12 @@ const ExploreData = [
   },
 ];
 
+const variants ={
+  initial:{ },
+  visible: { opacity: 1 },
+  hidden: { opacity: 0 },
+}
+
 const Explore = () => {
   return (
     <section className="w-full flex flex-col  bg-gray-400 rounded-br-full ">
@@ -46,21 +52,21 @@ const Explore = () => {
         </motion.h3>
 
         {/* Grid Section */}
-        <div className="flex gap-10 col-span-1 ml-10">
+        <div className="flex gap-10 col-span-5 justify-between ">
           {ExploreData.map((item) => {
             return (
               <motion.div
-                variants={SlideUp(item.delay)}
+                variants={SlideUp(0)}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.3 }}
-                className=" group  w-full rounded-2xl"
+                className=" group jus w-full rounded-2xl "
               >
                 <img
                   src={item.img}
                   alt="Image"
                   loading="lazy"
-                  className="w-[400px] rounded-xl img-shadow  group-hover:scale-125 overflow-hidden transition-all duration-500 mb-5 mt-5"
+                  className="w-[400px] rounded-xl img-shadow   group-hover:scale-125 overflow-hidden transition-all duration-500 mb-5 mt-5"
                 />
 
                 <div>

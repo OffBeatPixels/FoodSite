@@ -1,10 +1,10 @@
 import React from "react";
-import Service1 from "/src/assets/food/service_1.webp";
-import Service2 from "/src/assets/food/service_2.webp";
-import Service3 from "/src/assets/food/service_3.webp";
-import Service4 from "/src/assets/food/service_4.webp";
+import Service1 from "/src/assets/food/service_1.PNG";
+import Service2 from "/src/assets/food/service_2.PNG";
+import Service3 from "/src/assets/food/service_3.PNG";
+import Service4 from "/src/assets/food/service_4.PNG";
 import { motion } from "framer-motion";
-import { SlideUp } from "/src/components/Hero/Hero";
+import { SlideUp } from "../VideoAnimation";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -121,14 +121,14 @@ const ExplorePage = () => {
 
   return (
     <motion.section
-      initial={{ x: "-100%", opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{
-        ease: "linear",
-        duration: 1,
-        x: { duration: 0.8 },
-      }}
-      exit={{ opacity: 0 }}
+    // initial={{ x: "-100%", opacity: 0 }}
+    // animate={{ x: 0, opacity: 1 }}
+    // transition={{
+    //   ease: "linear",
+    //   duration: 1,
+    //   x: { duration: 0.8 },
+    // }}
+    // exit={{ opacity: 0 }}
     >
       {/* <div className="container"> */}
       <div id="animationelement"></div>
@@ -137,7 +137,7 @@ const ExplorePage = () => {
           variants={SlideUp(0)}
           initial="hidden"
           whileInView="show"
-          className="text-3xl font-serif font-bold  uppercase text-center rounded-tl-3xl rounded-br-3xl bg-[#0B919C] py-8"
+          className="text-[40px] font-piston font-extrabold  uppercase text-center  bg-[#C27B30] py-8"
         >
           Explore
         </motion.h3>

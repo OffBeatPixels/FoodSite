@@ -1,44 +1,3 @@
-// import React from "react";
-// import { motion } from "framer-motion";
-// const Popup = ({ image, name, text, onClose }) => {
-//   return (
-//     <motion.div
-//       initial={{ opacity: 0, scale: 0.5 }}
-//       animate={{ opacity: 1, scale: 1 }}
-//       exit={{ opacity: 0, scale: 0.5 }}
-//       transition={{ duration: 0.5 }}
-//       className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 z-50"
-//       onClick={onClose}
-//     >
-//       <div
-//         className="bg-blue-200 p-6 rounded-lg shadow-lg h-[80%] w-[900px] relative"
-//         onClick={(e) => e.stopPropagation()}
-//       >
-//         <button onClick={onClose} className="absolute top-2 right-2  text-2xl">
-//           &times;
-//         </button>
-
-//         {/* Flexbox to align image and text side by side */}
-//         <div className="flex gap-20 text-gray-800">
-//           {/* Image Section */}
-//           <div className="w-[70%]">
-//             <img src={image} alt={name} className="w-full h-auto rounded-lg" />
-//           </div>
-
-//           {/* Text Section */}
-//           <div className="w-2/3 pl-4">
-//             <h1 className="text-2xl flex justify-center font-semibold mb-1">
-//               {name}
-//             </h1>
-//             <p className="text-lg overflow-auto h-[450px]">{text}</p>
-//           </div>
-//         </div>
-//       </div>
-//     </motion.div>
-//   );
-// };
-
-// export default Popup;
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -79,7 +38,7 @@ const Popup = ({ image, name, text, onClose }) => {
             {/* First Section (with Heading, Content, and Image) */}
             <div>
               <p className="text-lg mb-4">{text.intro}</p>
-              <h2 className="text-xl font-bold mb-2">
+              <h2 className="text-xl  font-bold mb-2">
                 {text.sections[0].heading}
               </h2>
               {text.sections[0].content}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { SlideUp } from "/src/components/Hero/Hero";
+import { SlideUp } from "../../VideoAnimation";
 import Popup from "/src/components/Pages/Blog/PopUp";
 import Blog1_1 from "/src/assets/food/Blog_1_1.webp";
 import Blog1_2 from "/src/assets/food/Blog_1_2.webp";
@@ -153,7 +153,7 @@ const BlogData = [
   },
   {
     id: 2,
-    name: "worried about Guest Management",
+    name: "Guest Management during an event",
     img: Blog2_1,
     delay: 0.4,
     text: {
@@ -423,29 +423,17 @@ export default function Blog() {
   };
 
   return (
-    <motion.section
-      initial={{ x: "-100%", opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{
-        ease: "linear",
-        duration: 1,
-        x: { duration: 0.8 },
-       
-      }}
-      exit={{ opacity: 0 }}
-    >
+    <section>
       <div className="container pb-24 ">
         {/* Section Title */}
-        <h3 className="text-4xl text-center font-league font-semibold uppercase py-8">
-          Blogs
-        </h3>
+        <h3 className="oswald uppercase mb-8 text-center">Blogs</h3>
 
         {/* Cards Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 place-items-center ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 place-items-center ">
           {BlogData.map((item) => (
             <div
               key={item.id}
-              className="group space-y-3 text-center bg-white/50 shadow-xl p-3 rounded-xl"
+              className="group space-y-4 text-center   shadow-2xl p-3 rounded-xl"
             >
               <div className="flex justify-center items-center">
                 <img
@@ -453,7 +441,7 @@ export default function Blog() {
                   alt={item.name}
                   loading="lazy"
                   className="
-                   w-60   rounded-2xl 
+                   w-ful  rounded-2xl 
                     group-hover:scale-105
                     group-hover:translate-y-[-10px]
                     transition-all
@@ -462,7 +450,7 @@ export default function Blog() {
               </div>
               <div>
                 <p
-                  className="text-sm font-semibold cursor-pointer"
+                  className="text-sm font-bold  cursor-pointer"
                   onClick={() => handleImageClick(item)}
                 >
                   {item.name}
@@ -485,6 +473,6 @@ export default function Blog() {
           onClose={handleClosePopup}
         />
       )}
-    </motion.section>
+    </section>
   );
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import G1 from "/src/assets/food/G1.webp";
 import G2 from "/src/assets/food/G2.webp";
 import G3 from "/src/assets/food/G3.webp";
@@ -10,182 +9,87 @@ import G8 from "/src/assets/food/G8.webp";
 import G9 from "/src/assets/food/G9.webp";
 import G10 from "/src/assets/food/G10.webp";
 import G11 from "/src/assets/food/G11.webp";
-import gallery from "../../../assets/food/gallery.webp";
-import { motion } from "framer-motion";
-import { SlideUp } from "/src/components/Hero/Hero";
-const GalleryData = [
-  {
-    id: 1,
-    name: "person ",
-    img: G1,
-    price: "$10",
-    delay: 0.4,
-  },
-  {
-    id: 2,
-    name: "Person",
-    img: G2,
-    price: "$5",
-    delay: 0.8,
-  },
-  {
-    id: 3,
-    name: "person",
-    img: G3,
-    price: "$8",
-    delay: 1.2,
-  },
-  {
-    id: 4,
-    name: "person",
-    img: G4,
-    price: "$8",
-    delay: 1.2,
-  },
-  {
-    id: 5,
-    name: "person",
-    img: G5,
-    price: "$8",
-    delay: 1.2,
-  },
-  {
-    id: 6,
-    name: "person",
-    img: G6,
-    price: "$8",
-    delay: 1.2,
-  },
-  {
-    id: 7,
-    name: "person",
-    img: G7,
-    price: "$8",
-    delay: 1.2,
-  },
-  {
-    id: 8,
-    name: "person",
-    img: G8,
-    price: "$8",
-    delay: 1.2,
-  },
-  {
-    id: 9,
-    name: "person",
-    img: G9,
-    price: "$8",
-    delay: 1.2,
-  },
-  // {
-  //   id: 10,
-  //   name: "person",
-  //   img: G10,
-  //   price: "$8",
-  //   delay: 1.2,
-  // },
-  // {
-  //   id: 11,
-  //   name: "person",
-  //   img: G11,
-  //   price: "$8",
-  //   delay: 1.2,
-  // },
-];
+import { Link } from "react-router-dom";
 
-const GalleryFull = () => {
+import { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useMotionValue,
+  useVelocity,
+  useAnimationFrame,
+} from "framer-motion";
+import { wrap } from "@motionone/utils";
+
+const ParallaxImages = ({ images, baseVelocity = 100 }) => {
+  const baseX = useMotionValue(0);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 90, // Adjusted for smoother motion
+    stiffness: 150, // Adjusted for less stiffness
+  });
+  const velocityFactor = useTransform(smoothVelocity, [0, 500], [0, 2], {
+    clamp: false,
+  });
+
+  const x = useTransform(baseX, (v) => `${wrap(-50, -100, v)}%`);
+
+  const directionFactor = useRef(1);
+  useAnimationFrame((t, delta) => {
+    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+
+    if (velocityFactor.get() < 0) {
+      directionFactor.current = -1;
+    } else if (velocityFactor.get() > 0) {
+      directionFactor.current = 1;
+    }
+
+    moveBy += directionFactor.current * moveBy * velocityFactor.get();
+    baseX.set(baseX.get() + moveBy);
+  });
+
   return (
-    <motion.section
-      initial={{ x: "-100%", opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{
-        ease: "linear",
-        duration: 1,
-        x: { duration: 0.8 },
-      }}
-      exit={{ opacity: 0 }}
-      className="relative pb-10"
-    >
-      {/* Colored Shape Overlay */}
-      <div className="absolute inset-0 flex justify-center items-center">
-        <div className="w-full h-full relative">
-          {/* First Shape (left) */}
-          <div className="absolute top-0 left-0 w-full h-full bg-[#ffffff]  clip-left"></div>
-          {/* <div className="absolute top-0 left-0 w-full h-full  clip-left"></div> */}
-          {/* Second Shape (right) */}
-          <div className="absolute top-0 left-0 w-full h-full bg-[#fefefe] clip-right"></div>
-          {/* <div className="absolute top-0 left-0 w-full h-full  clip-right"></div> */}
-        </div>
-      </div>
-      <motion.h3
-        // variants={SlideUp(0)}
-        // initial="hidden"
-        // whileInView="show"
-        className=" h-[60vh]  relative "
-        style={{
-          background: `url(${gallery}) center/contain no-repeat`,
-          backgroundSize: "cover",
-        }}
-      ></motion.h3>
-
-      <div className="container py-1 relative z-10">
-        {/* Section Title */}
-        {/* <motion.h3
-          variants={SlideUp(0.5)}
-          initial="hidden"
-          whileInView="show"
-          className="text-4xl text-center font-league font-semibold uppercase py-20 "
-          style={{
-            background: `url(${gallery}) center/cover no-repeat `,
-            width: "100%",
-          }}
-        ></motion.h3> */}
-
-        {/* Cards Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 place-items-center mt-1">
-          {GalleryData.map((item) => (
-            <div
-              key={item.id}
-              className="group space-y-3 text-center rounded-xl"
-            >
-              <div className="flex justify-center  items-center">
-                <img
-                  src={item.img}
-                  alt="Gallery"
-                  loading="lazy"
-                  className="
-                w-72 rounded-2xl 
-                group-hover:scale-x-110
-                group-hover:translate-y-[-10px]
-                transition-all
-                duration-700 "
-                />
-              </div>
-              <div>
-                <p className="text-xl font-bold text-yellow-500">
-                  {/* {item.price} */}
-                </p>
-              </div>
-            </div>
+    <div className="my-2  ">
+      <motion.div className="flex " style={{ x }}>
+        {Array(3)
+          .fill(images)
+          .flat()
+          .map((imgSrc, index) => (
+            <img
+              key={index}
+              src={imgSrc}
+              alt={`parallax-image-${index}`}
+              className="inline-block w-full mx-1   max-w-[350px] h-[20vh] md:h-[40vh]"
+            />
           ))}
-        </div>
-        <p className="text-center font-bold italic">
-          Disclaimer - Keeping in view the privacy of our customers, we don't
-          post their pictures.
-        </p>
-      </div>
-
-      <style jsx>{`
-        .clip-left {
-          clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
-        }
-
-        .clip-right {
-          clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-        }
-      `}</style>
-    </motion.section>
+      </motion.div>
+    </div>
   );
 };
 
-export default GalleryFull;
+export default function ParallaxGallery() {
+  const images = [G1, G2, G3, G4, G5, G6, G7, G8, G9, G10, G11];
+
+  return (
+    <section className="bg-[#E7E8EA]  py-5">
+      {/* <div className="flex justify-between">
+        {" "} */}
+      <h2 className="oswald mx-5 md:mx-0 md:px-20 uppercase   text-left">
+        Gallery
+      </h2>
+      <p className="text-left mb-8 mx-5 md:mx-0 md:px-20  font-bold italic">
+        Disclaimer - To ensure our customers' privacy, we do not share their
+        photos.
+        <Link className="mx-5  text-orange-500 font-extrabold " to="/gallery">
+          View All
+        </Link>
+      </p>
+      {/* </div> */}
+      <ParallaxImages images={images} baseVelocity={-5} />
+      <ParallaxImages images={images} baseVelocity={5} />
+    </section>
+  );
+}

@@ -3,12 +3,47 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+html, body {
+  font-family: font-sans;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  height: 100%;
 }
+
+
+
+@media (max-width: 768px) {
+  video {
+    height: auto;   }
+}
+
+
+
+
+.oswald{
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 50px;
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+  .stretched-text {
+    font-size: 5rem;       /* Adjust font size as needed */
+  font-weight: bold;     /* Make it bold for a strong appearance */
+  transform: scaleY(2); /* Stretch the text vertically */
+  display: inline-block; /* Ensures transform only affects the text */
+}
+
 
 h1,
 h2,
@@ -20,18 +55,7 @@ h6 {
   /* font-weight: bolder; */
   font-weight: bold;
 }
-@layer base {
-  .text-outline {
-    -webkit-text-stroke: 2px rgb(0, 0, 0);
-  }
-  .sidebar-container {
-    @apply bg-gray-400 h-[80%] w-[10%] rounded-3xl 
-    ml-6 p-4 border transition-all duration-500 border-solid border-gray-600 relative;
-  }
-  .sidebar {
-    @apply flex items-center mt-2 p-4 rounded-lg cursor-pointer hover:bg-yellow-200 hover:text-white duration-300 transition-all;
-  }
-}
+
 
 @layer components {
   .btn-primary {
@@ -47,9 +71,11 @@ h6 {
   .footer-link {
     @apply hover:underline hover:text-darkGreen duration-200;
   }
+
+
 }
 
-/* slider section  */
+/* slider section 
 .slider {
   @apply h-[50vh] sm:h-screen  w-screen overflow-hidden relative;
 }
@@ -82,7 +108,7 @@ h6 {
 }
 
 /* Thumbnail Section  */
-.thumbnail {
+/* .thumbnail {
   @apply absolute w-max z-[100] flex gap-5 left-2/4 bottom-[50px];
 }
 .thumbnail .item {
@@ -90,24 +116,24 @@ h6 {
 }
 .thumbnail .item img {
   @apply w-full h-full object-cover shadow-[5px_0_15px_rgba(0,0,0,0.3)] rounded-[20px];
-}
+} */
 
 /* nextPrevArrows Section  */
-.nextPrevArrows {
+/* .nextPrevArrows {
   @apply absolute z-[100] w-full flex items-center top-[50%] justify-between px-4;
 }
 .nextPrevArrows button {
   @apply w-10 h-10 bg-[#14ff72cb] text-white font-[bold] transition-[0.5s] cursor-pointer rounded-full border-none hover:bg-white hover:text-black;
   font-family: monospace;
-}
+} */
 
 /* Animation Part */
-.slider .list .item:nth-child(1) {
+/* .slider .list .item:nth-child(1) {
   @apply z-[1];
-}
+} */
 
 /* animation text in first item */
-.slider .list .item:nth-child(1) .content .title,
+/* .slider .list .item:nth-child(1) .content .title,
 .slider .list .item:nth-child(1) .content .type,
 .slider .list .item:nth-child(1) .content .description,
 .slider .list .item:nth-child(1) .content .buttons {
@@ -129,10 +155,10 @@ h6 {
 }
 .slider .list .item:nth-child(1) .content .buttons {
   animation-delay: 1s !important;
-}
+} */
 
 /* Animation for next button click */
-.slider.next .list .item:nth-child(1) img {
+/* .slider.next .list .item:nth-child(1) img {
   @apply w-[150px] h-[220px] absolute animate-[showImage_0.5s_linear_1_forwards] rounded-[30px] left-2/4 bottom-[50px];
 }
 @keyframes showImage {
@@ -158,10 +184,10 @@ h6 {
   from {
     @apply translate-x-[150px];
   }
-}
+} */
 
 /* Animation for prev button click */
-.slider.prev .list .item:nth-child(2) {
+/* .slider.prev .list .item:nth-child(2) {
   @apply z-[2];
 }
 .slider.prev .list .item:nth-child(2) img {
@@ -197,7 +223,9 @@ h6 {
   .slider .list .item .content .title {
     @apply text-[50px];
   }
-}
+} */
+ 
+
 
 .wave-divider {
   top: 0;
@@ -250,6 +278,7 @@ h6 {
 
 .glide__slide img {
   width: 100%;
+  height: 300px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -310,10 +339,66 @@ h6 {
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
+
+/* If we need img animations for all types of screens, remove min-width */
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
   img {
     animation: scale-a-lil linear both;
     animation-timeline: view();
-    animation-range: 25vh 75vh;
+    animation-range: 0vh  0vh;
   }
 }
+
+.checkered-pattern {
+  width: 100%;
+  overflow: hidden;
+}
+
+.checkered-pattern svg {
+  width: 2560PX;
+  height: 25px; /* Adjust as needed */
+}
+
+@media (max-width: 767px) {
+.flip-container {
+  perspective: 1000px; /* Adds perspective for 3D effect */
+}
+
+.flip-card-inner {
+  transition: transform 0.6s; /* Animation duration */
+  transform-style: preserve-3d; /* Keeps the 3D effect */
+}
+
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden; /* Hides the back side when facing away */
+  position: absolute; /* Positioning for flipping */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+}
+
+.flip-card-back {
+  transform: rotateY(180deg); /* Starts back flipped */
+}
+
+/* Rotate the card when flipped */
+.rotate-y-180 {
+  transform: rotateY(180deg); /* Trigger the flip */
+}
+}
+
+
+
+.border-image {
+    pointer-events: none; /* Prevents interaction with the border */
+    border-radius: 10px; /* Adjust if you want rounded corners */
+    overflow: hidden;
+}
+
+
+
+/* .parallax {
+  overflow: hidden;
+}
+ */

@@ -1,9 +1,9 @@
 import React from "react";
-import Logo from "/src/assets/food/logo.webp";
+import Logo from "/src/assets/food/logo-2.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 // import Brands from "./../Brands/Brands";
-import Divider from "/src/components/Divider/Divider";
+// import Divider from "/src/components/Divider/Divider";
 import {
   FaFacebook,
   FaTwitter,
@@ -17,16 +17,16 @@ const Footer = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative z-10 bg-[#0B919C]  bottom-0 "
+      className="relative z-10 bg-[#2a2a2a]  bottom-0 "
     >
       <div className="container pt-10">
         {/* Background Shape */}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 bottom-5 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 bottom-5 relative z-10   ">
           {/* Brand Info */}
           <div>
-            <img src={Logo} alt="Logo" className="w-40 rounded-full " />
-            <p className="mb-4">Bhopal Madhya Pradesh</p>
+            <img src={Logo} alt="Logo" width={200} />
+            <p className="text-white">Bhopal, Madhya Pradesh</p>
           </div>
 
           {/* Quick Links */}
@@ -38,23 +38,26 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    to="/contact"
-                    className="hover:text-white inline-block footer-link"
+                    to="/about"
+                    className="text-white hover:text-black footer-link"
                   >
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" className="hover:text-white footer-link">
                     About Us
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/Operations"
-                    className="hover:text-white footer-link"
+                    className="text-white hover:text-black inline-block footer-link"
                   >
-                    Our Operations
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/Blog"
+                    className="text-white hover:text-black inline-block footer-link"
+                  >
+                    Blogs
                   </Link>
                 </li>
               </ul>
@@ -62,17 +65,26 @@ const Footer = () => {
             <div>
               <ul className="space-y-2 mt-8">
                 <li>
-                  <Link to="/brands" className="hover:text-white footer-link">
-                    Our Brands
+                  <Link
+                    to="/brands"
+                    className="text-white hover:text-black footer-link"
+                  >
+                   Brands
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="hover:text-white footer-link">
+                  <Link
+                    to="#"
+                    className="text-white hover:text-black footer-link"
+                  >
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="hover:text-white footer-link">
+                  <Link
+                    to="#"
+                    className="text-white hover:text-black footer-link"
+                  >
                     Terms & Conditions
                   </Link>
                 </li>
@@ -86,7 +98,7 @@ const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" hover:text-blue-600 transition-colors"
+                className="text-white hover:text-blue-600 transition-colors"
               >
                 <FaFacebook size={24} />
               </a>
@@ -94,7 +106,7 @@ const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" hover:text-blue-400 transition-colors"
+                className="text-white hover:text-blue-400 transition-colors"
               >
                 <FaTwitter size={24} />
               </a>
@@ -102,7 +114,7 @@ const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" hover:text-pink-600 transition-colors"
+                className="text-white hover:text-pink-600 transition-colors"
               >
                 <FaInstagram size={24} />
               </a>
@@ -110,7 +122,7 @@ const Footer = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" hover:text-blue-700 transition-colors"
+                className="text-white hover:text-blue-700 transition-colors"
               >
                 <FaLinkedin size={24} />
               </a>

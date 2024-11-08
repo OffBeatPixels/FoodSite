@@ -1,14 +1,14 @@
 import React from "react";
-import Service1 from "/src/assets/food/MGF-1.webp";
-import Service2 from "/src/assets/food/MGF-2.webp";
-import Service3 from "/src/assets/food/MGF-3.webp";
-import Service4 from "/src/assets/food/MGF-4.webp";
-import { delay, motion } from "framer-motion";
-import { SlideUp } from "/src/components/Hero/Hero";
+import Service1 from "/src/assets/food/MGF-1.png";
+import Service2 from "/src/assets/food/MGF-2.png";
+import Service3 from "/src/assets/food/MGF-3.png";
+import Service4 from "/src/assets/food/MGF-4.png";
+import {  motion } from "framer-motion";
+import { SlideUp } from "./../VideoAnimation";
 import { Link } from "react-router-dom";
-import Divider from "/src/components/Divider/Divider";
-import shape from "/src/assets/food/shape.svg";
-import { useInView } from "react-intersection-observer";
+
+
+
 
 const OperationsData = [
   {
@@ -39,7 +39,7 @@ const OperationsData = [
   },
   {
     id: 4,
-    name: "Operations & Maintenance",
+    name: "O&M",
     img: Service4,
     description:
       "If your property, whether it’s a club, restaurant, or event venue... ",
@@ -53,40 +53,42 @@ const Operations = () => {
     <section
       className=" text-black  "
       style={{
-        // background: `url("https://images.pexels.com/photos/616401/pexels-photo-616401.webp?cs=srgb&dl=pexels-goumbik-616401.webp&fm=jpg") center/cover  no-repeat`,
-        background: `url("https://img.freepik.com/free-psd/indian-food-illustration-isolated_23-2151851514.jpg?t=st=1728988377~exp=1728991977~hmac=d5c109f1e8567b92f6368302ba35a7b3fb0ecb276e84ac9828cba7b35e8e4bc0&w=996") center/cover no-repeat `,
-        backgroundSize: "100% 100%",
+        background: `url("/src/assets/food/service-bg.jpg") center/cover no-repeat `,
+        backgroundSize: "cover",
       }}
     >
+      <div className="md:px-20 py-10 mx-5 md:mx-0">
+        <span className="oswald mb-8 text-left">SERVICES WE OFFER</span>
+      </div>
       {/* Added class for background */}
-      <div className="container pb-14  ">
-        {/* Section */}
-
+      <div className=" mx-10 pb-14  ">
         {/* Grid Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 text-center">
+        <div className="grid grid-cols-1  w-[90vw] gap-1 md:grid-cols-2 md:gap-x-10 lg:grid-cols-4 gap-y-6   text-center">
           {OperationsData.map((item) => {
             return (
               <motion.div
                 variants={SlideUp(item.delay)}
                 initial="hidden"
+                animate="show"
+                // Add transition for smooth animation
                 whileInView="show"
                 viewport={{ once: false, amount: 0.3 }}
+                className="shadow-2xl mx-auto w-64 h-80 bg-white rounded-t-3xl rounded-b-3xl"
               >
                 <img
                   src={item.img}
                   alt="Image"
-                  className="w-52 xl:w-56 aspect-square overflow-hidden transition-all duration-500 m-auto transform hover:scale-90"
+                  className="w-52  mt-5 rounded-2xl aspect-square overflow-hidden transition-all duration-500 m-auto transform hover:scale-90"
                 />
 
-                <div>
-                  <h3 className="text-[10px] xl:text-[15px]  text-center  ">
-                    {item.name}
-                  </h3>
+                <div className="mt-5">
+                  <h3 className="] text-lg ">{item.name}</h3>
                   {/* <h3 className="text-xl text-yellow-500">{item.price}</h3>*/}
-                  <p className=" m-5 ">{item.description}</p>
+                  {/* <p className=" m-5 text-[14px]">{item.description}</p> */}
                   <Link
-                    to={`/OperationsPage#service${item.id}`}
-                    className="font-bold text-lg  text-orange-500 "
+                    to={`/Operations#service${item.id}`}
+                    // to={`/Operations`}
+                    className="font-bold  text-[15px text-orange-500 "
                   >
                     Read More
                   </Link>

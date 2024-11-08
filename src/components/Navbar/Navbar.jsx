@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import logo from "/src/assets/food/logo.webp";
+import logo from "/src/assets/food/logo.png";
 import { motion } from "framer-motion";
 import { TiThMenu } from "react-icons/ti";
 import { NavLink } from "react-router-dom";
@@ -7,15 +7,16 @@ import ExplorePage from "../Explore/ExplorePage";
 const navmenu = [
   { id: 1, title: "Home", path: "/", delay: "0.1s" },
   { id: 2, title: "About", path: "/about", delay: "0.2s" },
-  { id: 3, title: "Blog", path: "/blog", delay: "0.3s" },
-  { id: 4, title: "Gallery", path: "/gallery", delay: "0.4s" },
   {
-    id: 5,
+    id: 3,
     title: "Services",
     path: "/Operations",
     delay: "0.5s",
   },
-  { id: 6, title: "Explore", path: "/Explore", delay: "0.6s" },
+  { id: 3, title: "Blogs", path: "/blog", delay: "0.3s" },
+  { id: 4, title: "Gallery", path: "/gallery", delay: "0.4s" },
+
+  // { id: 6, title: "Explore", path: "/Explore", delay: "0.6s" },
 ];
 
 const SlideDown = (delay) => {
@@ -66,12 +67,12 @@ const Navbar = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           src={logo}
           alt="logo"
-          className="w-20 rounded-full lg:ml-20 "
+          className="w-36  lg:ml-20 mt-2 "
         />
 
         {/* Menu (always visible on larger screens) */}
-        <div className="hidden md:flex flex-grow justify-end px-5 lg:px-20">
-          <ul className="flex gap-2 lg:gap-6">
+        <div className="hidden md:flex flex-grow justify-end px-5 lg:px-20 mt-5">
+          <ul className="flex gap-2 ">
             {navmenu.map((menu) => (
               <motion.li
                 variants={SlideDown(menu.delay)}
@@ -85,8 +86,8 @@ const Navbar = () => {
                   className={
                     ({ isActive }) =>
                       isActive
-                        ? "inline-block px-4 text-xl text-orange-700" // Active link style
-                        : "inline-block px-4 text-xl  hover:text-orange-500" // Default link style
+                        ? "inline-block px-2 text-sm  font-sans font-bold text-orange-700" // Active link style
+                        : "inline-block px-2 text-sm font-sans font-bold  hover:text-orange-500" // Default link style
                   }
                 >
                   {menu.title}

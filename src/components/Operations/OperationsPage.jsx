@@ -1,11 +1,9 @@
 import React from "react";
-import Service1 from "/src/assets/food/service_1.webp";
-import Service2 from "/src/assets/food/service_2.webp";
-import Service3 from "/src/assets/food/service_3.webp";
-import Service4 from "/src/assets/food/service_4.webp";
-import OperationsPage1 from "/src/assets/food/Service_page-1.webp";
-import { motion } from "framer-motion";
-import { SlideUp } from "/src/components/Hero/Hero";
+import Service1 from "/src/assets/food/service_1.png";
+import Service2 from "/src/assets/food/service_2.png";
+import Service3 from "/src/assets/food/service_3.png";
+import Service4 from "/src/assets/food/service_4.png";
+import OperationsPage1 from "/src/assets/food/Service_page-1.png";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import OperationsAnimation from "./OperationsAnimation";
@@ -17,22 +15,24 @@ const OperationsData = [
     img: Service1,
     // delay: 0.1,
     description: (
-      <ol className="p-2">
+      <ol className="text-justify p-5 ">
         <p>
           At Ace Caterers, we specialize in providing high-quality catering
-          Operations tailored to the needs of industrial and institutional
+          operations tailored to the needs of industrial and institutional
           clients. Our catering is all about convenience, cleanliness, and
           customization. Our service is designed to meet the unique requirements
           of large-scale operations. Our focus is aimed at taking over your
-          concern about the canteen Operations from DAY 1 bringing about a
-          visible change in it and leaving you free to concentrate on your
-          production operations and needs.
+          concern about the canteen operations from DAY 1, bringing about a
+          visible change, and leaving you free to concentrate on your production
+          operations and needs.
         </p>
+
         <p>From factories to educational institutions, we offer:</p>
+        <br />
 
         <li>
-          <strong>• Nutritious Meal Plans:</strong> Catering that focuses on
-          health and energy, keeping your workplace productive.
+          <strong>• Timely Service:</strong> Meals are delivered on time to
+          ensure smooth operations.
         </li>
 
         <li>
@@ -41,21 +41,22 @@ const OperationsData = [
         </li>
 
         <li>
-          <strong>• Timely Service:</strong> Meals are delivered on time to
-          ensure smooth operations.
+          <strong>• Nutritious Meal Plans:</strong> Catering that focuses on
+          health and energy, keeping your workplace productive.
+        </li>
+        <li>
+          <strong>• Our Esteemed Clients:</strong> Dell Philips LupinCrompton
+          and Greaves,Proctor & Gamble(P&G) Mahindra Tractors.
         </li>
 
         <li>
           <strong>• Customized Solutions:</strong> We can adapt our meal plans
-          based on the dietary needs and preferences of your team or institution
-        </li>
-
-        <li>
-          <strong>• Our Esteemed Clients :</strong> Dell, Philips, Lupin,
-          Crompton and Greaves, Proctor & Gamble (P&G), Mahindra Tractors
+          based on the dietary needs and preferences of your team or
+          institution.
         </li>
       </ol>
     ),
+    backgroundColor: "#FAE2C9",
   },
   {
     id: 2,
@@ -63,7 +64,7 @@ const OperationsData = [
     img: Service2,
     // delay: 0.2,
     description: (
-      <ol className="p-5">
+      <ol className="text-justify p-5 ">
         <p>
           Life is full of big and small happenings which prompt us to celebrate
           with friends and relatives to share our joy and happiness. Keeping
@@ -73,6 +74,7 @@ const OperationsData = [
           intricacies of organising a party.
         </p>
         <p>We provide:</p>
+        <br />
 
         <li>
           <strong>• Customized Menus:</strong> Designed to fit the theme,
@@ -97,6 +99,7 @@ const OperationsData = [
         </li>
       </ol>
     ),
+    backgroundColor: "#E7E8EA",
   },
   {
     id: 3,
@@ -105,7 +108,7 @@ const OperationsData = [
     img: Service3,
     // delay: 0.3,
     description: (
-      <ol className="p-5">
+      <ol className="p-5 text-justify">
         <p>
           For over six years, Magnet Foods has managed exclusive clubs,
           including those for guests, offering top-notch service and
@@ -114,6 +117,7 @@ const OperationsData = [
           experience by improving quality of food and Operations as well as
           managing of special dinners, parties etc. in excellent manner.
         </p>
+        <br />
 
         <li>
           <strong>• Tailored Catering Operations: </strong>We offer catering
@@ -121,14 +125,8 @@ const OperationsData = [
         </li>
 
         <li>
-          <strong>• Event Coordination: </strong> From golf tournaments to
+          <strong>• Event Coordination:</strong> From golf tournaments to
           exclusive dinners, we ensure every event is memorable.
-        </li>
-
-        <li>
-          <strong> • Seamless Operations: </strong>Our team handles everything
-          from daily club management to special events, ensuring a refined
-          experience for all members.
         </li>
 
         <li>
@@ -136,16 +134,22 @@ const OperationsData = [
           accustomed to serving army personnel, we bring discipline and
           professionalism to every operation.
         </li>
+        <li>
+          <strong> • Seamless Operations: </strong>Our team handles everything
+          from daily club management to special events, ensuring a refined
+          experience for all members.
+        </li>
       </ol>
     ),
+    backgroundColor: "#FAE2C9",
   },
   {
     id: 4,
-    name: "Operations & Maintenance",
+    name: "Operations & Maintenance (O&M)",
     img: Service4,
     // delay: 0.4,
     description: (
-      <ol className="p-5">
+      <ol className="p-5 text-justify">
         <p>
           If your property, whether it’s a club, restaurant, or event venue,
           isn’t delivering the returns you expected, Magnet Foods can help. Our
@@ -155,6 +159,7 @@ const OperationsData = [
           professionals who specialize in turning around any such struggling
           property.
         </p>
+        <br />
 
         <li>
           <strong>• Revenue Optimization:</strong>We evaluate your current
@@ -179,6 +184,7 @@ const OperationsData = [
           service model or handling complete property management, we take care
           of everything to ensure sustainable growth.
         </li>
+        <br />
         <p>
           With Magnet Foods, you’re not just getting a service—you’re getting a
           trusted partner committed to delivering excellence. Whether it’s
@@ -187,6 +193,7 @@ const OperationsData = [
         </p>
       </ol>
     ),
+    backgroundColor: "#E7E8EA",
   },
 ];
 
@@ -204,36 +211,31 @@ const OperationsPage = () => {
   }, [location]);
 
   return (
-    <section className=" text-[#181919]">
-      <motion.h3
-        variants={SlideUp(0)}
-        initial="hidden"
-        whileInView="show"
-        className=" h-[60vh]  relative "
+    <section className="text-[#181919] pb-20">
+      {/* Hero Section */}
+      <h3
+        className="relative h-[20vh] md:h-[60vh] bg-cover bg-center bg-no-repeat"
         style={{
-          background: `url(${OperationsPage1}) center/contain no-repeat`,
-          backgroundSize: "cover",
+          backgroundImage: `url(${OperationsPage1})`,
         }}
-      ></motion.h3>
+      ></h3>
 
-      {/* <div
-        style={{
-          background:
-            'url("https://media.istockphoto.com/id/513694258/photo/medium-golden-brown-wood-texture-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=NsoyhM8kapAlXRAYo5Bsj7MJxnr6DpwywC8_8tZlsM4=")no-repeat center/cover',
-           
-          minHeight: "30vh",
-          width: "100vw",
-        }}
-      ></div> */}
-      <div className=" mx-auto w-[90%]  px-5">
+      {/* Operations Data Section */}
+      <div className="mx-auto w-[90%] md:w-[80%] px-4 md:px-8 lg:px-12">
         {OperationsData.map((item, i) => (
-          <OperationsAnimation
+          <div
             key={i}
-            name={item.name}
-            text={item.description}
-            index={i}
-            image={item.img}
-          />
+            id={`service${item.id}`}
+            style={{ backgroundColor: item.backgroundColor }}
+            className="py-6 md:py-10 my-4 md:my-6 rounded-lg"
+          >
+            <OperationsAnimation
+              name={item.name}
+              text={item.description}
+              index={i}
+              image={item.img}
+            />
+          </div>
         ))}
       </div>
     </section>

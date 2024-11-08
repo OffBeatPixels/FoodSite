@@ -1,16 +1,18 @@
 "use client";
-import React from "react";
+import {React,useEffect} from "react";
 import { StickyScroll } from "./StickyScroll";
 // import Image from "next/image";
-import Service1 from "/src/assets/food/service_1.webp";
-import Service2 from "/src/assets/food/service_2.webp";
-import Service3 from "/src/assets/food/service_3.webp";
-import Service4 from "/src/assets/food/service_4.webp";
-import OperationsPage1 from "/src/assets/food/Service_page-1.webp";
+import Service1 from "/src/assets/food/service_1.png";
+import Service2 from "/src/assets/food/service_2.png";
+import Service3 from "/src/assets/food/service_3.png";
+import Service4 from "/src/assets/food/service_4.png";
+import OperationsPage1 from "/src/assets/food/Service_page-1.png";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const content = [
   {
+    id: 1,
     title: " Industrial / Institutional Catering",
     description: (
       <ol>
@@ -61,6 +63,7 @@ const content = [
     ),
   },
   {
+    id: 2,
     title: "Outdoor Catering",
     description: (
       <ol>
@@ -111,6 +114,7 @@ const content = [
     ),
   },
   {
+    id: 3,
     title: "Club Operations",
     description: (
       <ol>
@@ -160,6 +164,7 @@ const content = [
     ),
   },
   {
+    id: 4,
     title: "Operations & Maintenance",
     description: (
       <ol>
@@ -219,17 +224,19 @@ const content = [
   },
 ];
 export function StickyScrollRevealDemo() {
+   const location = useLocation();
+
+   useEffect(() => {
+     if (location.hash) {
+       const id = location.hash.replace("#", "");
+       const element = document.getElementById(id);
+       if (element) {
+         element.scrollIntoView({ behavior: "smooth" });
+       }
+     }
+   }, [location]);
   return (
-    <motion.div
-      initial={{ x: "-100%", opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{
-        ease: "linear",
-        duration: 1,
-        x: { duration: 0.8 },
-      }}
-      exit={{ opacity: 0 }}
-    >
+    <motion.div>
       <StickyScroll content={content} />
     </motion.div>
   );

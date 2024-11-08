@@ -23,6 +23,7 @@ export default {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
         league: ["League Gothic", "sans-serif"],
+        "piston": ["Piston Pressure", "sans-serif"],
       },
 
       container: {

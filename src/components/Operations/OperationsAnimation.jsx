@@ -17,18 +17,20 @@ function OperationsAnimation({ text, index, image, name }) {
         },
       }}
       viewport={{ once: false }} // Animation will run every time the user views it
-      style={{
-        display: "flex",
-        flexDirection: isEvenIndex ? "row" : "row-reverse", // Adjust direction based on index
-        alignItems: "center",
-      }}
+      className={`flex flex-col md:flex-row ${
+        isEvenIndex ? "md:flex-row" : "md:flex-row-reverse"
+      } items-center`}
     >
-      <div className="w-[30%]  pt-14">
-        <img src={image} alt={`Card ${index + 1}`} className="card-image" />
+      <div className="w-full md:w-[40%] p-4 md:p-0">
+        <img
+          src={image}
+          alt={`Card ${index + 1}`}
+          className="w-full h-auto rounded-lg"
+        />
       </div>
-      <div className="w-[70%] ml-10">
-        <h3 className="text-2xl font-bold">{name}</h3>
-        <p className="card-text">{text}</p>
+      <div className="w-full md:w-[60%] p-4 md:p-0 md:ml-10 text-center md:text-left">
+        <h3 className="text-lg font-bold md:text-2xl lg:text-3xl">{name}</h3>
+        <p className="text-sm md:text-base lg:text-lg mt-2">{text}</p>
       </div>
     </motion.div>
   );
